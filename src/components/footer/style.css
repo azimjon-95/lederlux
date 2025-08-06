@@ -87,31 +87,30 @@
     }
 }
 
-/* Dark Mode Support for Footer */
-@media (prefers-color-scheme: dark) {
-    .bez-footer {
-        background: #1e1e1e;
-        /* Adjusted for dark mode */
-        border-bottom: 1px solid #333;
-    }
 
-    .bez-footer-title {
-        color: #FFD700;
-    }
-
-    .bez-footer-links a {
-        color: #cccccc;
-    }
-
-    .bez-footer-links a:hover {
-        color: #FFD700;
-    }
-
-    .bez-footer-bottom {
-        color: #cccccc;
-        border-top: 1px solid #333;
-    }
+.bez-footer {
+    background: #1e1e1e !important;
+    /* Adjusted for dark mode */
+    border-bottom: 1px solid #333 !important;
 }
+
+.bez-footer-title {
+    color: #FFD700 !important;
+}
+
+.bez-footer-links a {
+    color: #cccccc !important;
+}
+
+.bez-footer-links a:hover {
+    color: #FFD700 !important;
+}
+
+.bez-footer-bottom {
+    color: #cccccc !important;
+    border-top: 1px solid #333 !important;
+}
+
 
 /* Print Styles for Footer */
 @media print {

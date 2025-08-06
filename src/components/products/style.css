@@ -134,38 +134,26 @@
     }
 }
 
-/* Dark Mode Support for Products Section */
-@media (prefers-color-scheme: dark) {
-    .bez-products-section {
-        background: #121212;
-    }
 
-    .bez-product-card {
-        background: #1e1e1e;
-        border-color: #333;
-    }
-
-    .bez-section-title,
-    .bez-product-title {
-        color: #FFD700;
-    }
-
-    .bez-product-description {
-        color: #cccccc;
-    }
+.bez-products-section {
+    background: #121212 !important;
 }
 
-/* High Contrast Mode for Products Section */
-@media (prefers-contrast: high) {
-    .bez-product-card {
-        border: 2px solid #000;
-    }
-
-    .bez-section-title,
-    .bez-product-title {
-        color: #2E7D32;
-    }
+.bez-product-card {
+    background: #1e1e1e !important;
+    border-color: #333 !important;
 }
+
+.bez-section-title,
+.bez-product-title {
+    color: #FFD700 !important;
+}
+
+.bez-product-description {
+    color: #cccccc !important;
+}
+
+
 
 /* Reduced Motion for Products Section */
 @media (prefers-reduced-motion: reduce) {

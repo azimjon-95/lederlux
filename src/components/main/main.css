@@ -171,7 +171,7 @@
 /* About Section Styles */
 .bez-about-section {
     padding: 100px 0;
-    background: #f8f9fa;
+    background: #1a1a1a;
 }
 
 .bez-container {
@@ -397,35 +397,27 @@
     }
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-    .bez-website-container {
-        background: #121212;
-        color: #ffffff;
-    }
 
-    .bez-about-section {
-        background: #1a1a1a;
-    }
-
-    .bez-section-title,
-    .bez-company-title {
-        color: #FFD700;
-    }
-
-    .bez-about-description {
-        color: #cccccc;
-    }
+.bez-website-container {
+    background: #121212 !important;
+    color: #ffffff !important;
 }
 
-/* High Contrast Mode */
-@media (prefers-contrast: high) {
-
-    .bez-section-title,
-    .bez-company-title {
-        color: #2E7D32;
-    }
+.bez-about-section {
+    background: #1a1a1a !important;
 }
+
+.bez-section-title,
+.bez-company-title {
+    color: #FFD700 !important;
+}
+
+.bez-about-description {
+    color: #cccccc !important;
+}
+
+
+
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
