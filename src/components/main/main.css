@@ -3,7 +3,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background: #1e1e1e !important;
 }
 
 /* Hero Slider Styles */
@@ -358,8 +358,13 @@
         padding: 0 10px;
     }
 
+    .bez-hero-slider {
+        height: 30vh;
+        min-height: 150px;
+    }
+
     .bez-slide-title {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
 
     .bez-slide-button {

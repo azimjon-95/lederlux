@@ -118,6 +118,17 @@
         padding: 0 10px;
     }
 
+    .bez-section-item::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 42% !important;
+        width: 60px;
+        height: 4px;
+        background: #FFD700;
+        border-radius: 2px;
+    }
+
     .bez-product-card {
         padding: 25px 15px;
     }

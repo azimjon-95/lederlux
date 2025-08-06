@@ -1,6 +1,6 @@
 /* Header Styles */
 .bez-header {
-    background: #4CAF50 !important;
+    background: #1e1e1e !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -198,6 +198,14 @@
 @media (max-width: 480px) {
     .bez-header {
         padding: 7px 10px;
+    }
+
+    .bez-contact-info {
+        display: none;
+    }
+
+    .bez-btn-search {
+        display: none;
     }
 
     .bez-btn-search span {
