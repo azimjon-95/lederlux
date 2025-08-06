@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Logo on the left -->
+  <g transform="translate(50,40)"  fill="none" stroke="#FFD700" stroke-width="4">
+    <polygon points="50,0 100,30 100,90 50,120 0,90 0,30"></polygon>
+    <circle cx="50" cy="0" r="5" fill="#FFD700"></circle>
+    <circle cx="100" cy="30" r="5" fill="#FFD700"></circle>
+    <circle cx="100" cy="90" r="5" fill="#FFD700"></circle>
+    <circle cx="50" cy="120" r="5" fill="#FFD700"></circle>
+    <circle cx="0" cy="90" r="5" fill="#FFD700"></circle>
+    <circle cx="0" cy="30" r="5" fill="#FFD700"></circle>
+    <circle cx="50" cy="60" r="5" fill="#FFD700"></circle>
+    <!-- Connecting lines -->
+    <!-- <line x1="0" y1="30" x2="50" y2="0"></line> -->
+    <line x1="50" y1="0" x2="50" y2="60"></line>
+    <line x1="100" y1="30" x2="50" y2="60"></line>
+    <line x1="100" y1="90" x2="50" y2="60"></line>
+    <line x1="0" y1="90" x2="50" y2="60"></line>
+    <line x1="50" y1="120" x2="50" y2="60"></line>
+    <line x1="0" y1="30" x2="50" y2="60"></line>
+  </g>
+
+  <!-- Text on the right -->
+  <g transform="translate(180,107)"  fill="#FFD700">
+    <text x="0" y="0" font-size="60"  font-weight="bold">LIDER LUX</text>
+    <text x="0" y="30" font-size="30">CHEMICAL PRODUCTS</text>
+  </g>
+</svg>
