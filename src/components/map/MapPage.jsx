@@ -1,106 +1,77 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { MapPin, Target, Search } from 'lucide-react';
 import './style.css';
-import { Link } from 'react-router-dom';
 
-function Footer({ lang = 'ru' }) {
-    // Translation object for different languages
-    const translations = {
-        ru: {
-            contacts: {
-                title: 'Контакты',
-                company: '«LIDERLUX» MCHJ',
-                address: 'Узбекистан, г. Фергана',
-                email: 'info@liderlux.uz',
-            },
-            products: {
-                title: 'Продукция',
-                items: ['Аммиак', 'Карбамид', 'Нитраты'],
-            },
-            about: {
-                title: 'О компании',
-                items: ['О нас', 'Контакты', 'Карта'],
-            },
-            copyright: '© 2025 ООО Лидерлюкс. Все права защищены.',
-        },
-        en: {
-            contacts: {
-                title: 'Contacts',
-                company: 'LIDERLUX LLC',
-                address: 'Uzbekistan, Fergana',
-                email: 'info@liderlux.uz',
-            },
-            products: {
-                title: 'Products',
-                items: ['Ammonia', 'Urea', 'Nitrates'],
-            },
-            about: {
-                title: 'About the Company',
-                items: ['About', 'Contact', 'Map'],
-            },
-            copyright: '© 2025 Liderlux LLC. All rights reserved.',
-        },
-        uz: {
-            contacts: {
-                title: 'Aloqa',
-                company: '«LIDERLUX» MCHJ',
-                address: 'Oʻzbekiston, Fargʻona',
-                email: 'info@liderlux.uz',
-            },
-            products: {
-                title: 'Mahsulotlar',
-                items: ['Ammiak', 'Karbamid', 'Nitratlar'],
-            },
-            about: {
-                title: 'Kompaniya haqida',
-                items: ['Biz haqimizda', 'Aloqa', 'Xarita'],
-            },
-            copyright: '© 2025 Liderlux MCHJ. Barcha huquqlar himoyalangan.',
-        },
+const ManzilMapPage = ({ long }) => {
+    const currentLocation = {
+        lat: 40.449883,
+        lng: 71.82734
     };
 
-    // Fallback to Russian if the provided lang is not supported
-    const selectedLang = translations[lang] || translations.ru;
+    // Translation object
+    const translations = {
+        en: {
+            title: "LOCATION",
+            locationText1: "Fergana Region, Tashlak District",
+            locationText2: "Ashkak MFY, Beshkish Street",
+            coordinates: "Coordinates"
+        },
+        ru: {
+            title: "МЕСТОНАХОЖДЕНИЕ",
+            locationText1: "Ферганская область, Ташлакский район",
+            locationText2: "Ашкак МФЙ, улица Бешкиш",
+            coordinates: "Координаты"
+        },
+        uz: {
+            title: "MANZIL",
+            locationText1: "Farg'ona viloyati, Toshloq tumani",
+            locationText2: "Ashkak MFY, Beshkish ko'chasi",
+            coordinates: "Koordinatalar"
+        }
+    };
 
-    // Route paths for the "About" section (lowercase for consistency)
-    const aboutRoutes = ['about', 'contact', 'map'];
+    // Select the appropriate translation based on the 'long' prop, default to 'uz' if invalid
+    const t = translations[long] || translations.uz;
 
     return (
-        <footer className="bez-footer">
-            <div className="bez-container">
-                <div className="bez-footer-content">
-                    <div className="bez-footer-section">
-                        <h4 className="bez-footer-title">{selectedLang.contacts.title}</h4>
-                        <p>{selectedLang.contacts.company}</p>
-                        <p>{selectedLang.contacts.address}</p>
-                        <p>{selectedLang.contacts.email}</p>
-                    </div>
-                    <div className="bez-footer-section">
-                        <h4 className="bez-footer-title">{selectedLang.products.title}</h4>
-                        <ul className="bez-footer-links">
-                            {selectedLang.products.items.map((item, index) => (
-                                <li key={index}>
-                                    <a href="#">{item}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="bez-footer-section">
-                        <h4 className="bez-footer-title">{selectedLang.about.title}</h4>
-                        <ul className="bez-footer-links">
-                            {selectedLang.about.items.map((item, index) => (
-                                <li key={index}>
-                                    <Link to={`/${lang}/${aboutRoutes[index]}`}>{item}</Link>
-                                </li>
-                            ))}
-                        </ul>
+        <div className="manzil-container">
+            {/* Header */}
+            <div className="header">
+                <h1 className="title">{t.title}</h1>
+            </div>
+
+            {/* Map Container */}
+            <div className="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d7471.768041511876!2d71.82734000000002!3d40.449883!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDI2JzU5LjYiTiA3McKwNDknMzguNCJF!5e1!3m2!1suz!2s!4v1754398596132!5m2!1suz!2s"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+
+            {/* Location Info */}
+            <div className="location-info">
+                <div className="info-item">
+                    <MapPin className="info-icon" size={20} />
+                    <div className="info-content">
+                        <p className="location-text">{t.locationText1}</p>
+                        <p className="location-text">{t.locationText2}</p>
                     </div>
                 </div>
-                <div className="bez-footer-bottom">
-                    <p>{selectedLang.copyright}</p>
+
+                <div className="info-item coordinates">
+                    <Target className="info-icon" size={20} />
+                    <div className="info-content">
+                        <p className="coordinates-text">{t.coordinates}: {currentLocation.lat.toFixed(6)}, {currentLocation.lng.toFixed(6)}</p>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </div>
     );
-}
+};
 
-export default Footer;
+export default ManzilMapPage;
