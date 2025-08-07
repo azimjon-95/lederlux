@@ -1,0 +1,558 @@
+/* ProductSinglePage.css */
+
+.bez-single-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 20px 0;
+}
+
+.bez-single-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Section */
+.bez-single-header {
+    margin-bottom: 30px;
+}
+
+.bez-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #2E7D32;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+}
+
+.bez-back-button:hover {
+    background: #1B5E20;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.3);
+}
+
+.bez-back-button svg {
+    transition: transform 0.3s ease;
+}
+
+.bez-back-button:hover svg {
+    transform: translateX(-3px);
+}
+
+/* Main Content Layout */
+.bez-single-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Image Gallery Section */
+.bez-single-gallery {
+    position: sticky;
+    top: 20px;
+}
+
+.bez-main-image {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: white;
+    margin-bottom: 20px;
+}
+
+.bez-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.bez-main-image:hover img {
+    transform: scale(1.02);
+}
+
+/* Image Navigation Arrows */
+.bez-image-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.bez-main-image:hover .bez-image-nav {
+    opacity: 1;
+}
+
+.bez-image-nav:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.bez-prev {
+    left: 15px;
+}
+
+.bez-next {
+    right: 15px;
+}
+
+/* Thumbnails */
+.bez-thumbnails {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+.bez-thumbnails::-webkit-scrollbar {
+    height: 6px;
+}
+
+.bez-thumbnails::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.bez-thumbnails::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.bez-thumbnail {
+    flex-shrink: 0;
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.bez-thumbnail:hover {
+    border-color: #2E7D32;
+    transform: translateY(-2px);
+}
+
+.bez-thumbnail.bez-active {
+    border-color: #FFD700;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.bez-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Product Information Section */
+.bez-single-info {
+    padding: 20px 0;
+}
+
+.bez-single-title-section {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border-left: 6px solid #2E7D32;
+}
+
+.bez-single-title {
+    font-size: 2.8rem;
+    color: #2E7D32;
+    margin-bottom: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.bez-single-price {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.bez-price-label {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.bez-price-value {
+    font-size: 2.2rem;
+    color: #FFD700;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(255, 215, 0, 0.2);
+}
+
+/* Specifications Section */
+.bez-single-specs {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.bez-specs-title {
+    font-size: 1.8rem;
+    color: #2E7D32;
+    margin-bottom: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bez-specs-title::before {
+    content: "📋";
+    font-size: 1.5rem;
+}
+
+.bez-specs-grid {
+    display: grid;
+    gap: 25px;
+}
+
+.bez-spec-item {
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    border-left: 4px solid #2E7D32;
+    transition: all 0.3s ease;
+}
+
+.bez-spec-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-left-width: 6px;
+}
+
+.bez-spec-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.bez-spec-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bez-spec-item h3 {
+    color: #2E7D32;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.bez-spec-item p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Additional Information */
+.bez-single-additional {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.bez-product-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bez-meta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.bez-meta-item:last-child {
+    border-bottom: none;
+}
+
+.bez-meta-item span:first-child {
+    color: #666;
+    font-weight: 500;
+}
+
+.bez-meta-item span:last-child {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Error State */
+.bez-single-error {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bez-single-error p {
+    font-size: 1.2rem;
+    color: #d32f2f;
+    margin-bottom: 20px;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    .bez-single-page {
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+    }
+
+    .bez-single-title-section,
+    .bez-single-specs,
+    .bez-single-additional,
+    .bez-main-image {
+        background: #1e1e1e !important;
+        color: #ffffff;
+    }
+
+    .bez-single-title,
+    .bez-specs-title,
+    .bez-spec-item h3 {
+        color: #FFD700 !important;
+    }
+
+    .bez-spec-item {
+        background: linear-gradient(135deg, #2a2a2a 0%, #333 100%) !important;
+    }
+
+    .bez-spec-item p,
+    .bez-price-label,
+    .bez-meta-item span {
+        color: #cccccc !important;
+    }
+
+    .bez-spec-icon {
+        background: #333 !important;
+    }
+
+    .bez-thumbnail,
+    .bez-single-error {
+        background: #2a2a2a !important;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .bez-single-content {
+        gap: 40px;
+    }
+
+    .bez-single-title {
+        font-size: 2.4rem;
+    }
+
+    .bez-price-value {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bez-single-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .bez-single-gallery {
+        position: static;
+    }
+
+    .bez-main-image {
+        height: 400px;
+    }
+
+    .bez-single-title-section,
+    .bez-single-specs {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bez-single-container {
+        padding: 0 15px;
+    }
+
+    .bez-single-title {
+        font-size: 2rem;
+    }
+
+    .bez-price-value {
+        font-size: 1.6rem;
+    }
+
+    .bez-main-image {
+        height: 300px;
+    }
+
+    .bez-single-title-section,
+    .bez-single-specs {
+        padding: 25px 20px;
+    }
+
+    .bez-spec-item {
+        padding: 20px;
+    }
+
+    .bez-back-button {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bez-single-container {
+        padding: 0 10px;
+    }
+
+    .bez-single-title {
+        font-size: 1.6rem;
+    }
+
+    .bez-price-value {
+        font-size: 1.4rem;
+    }
+
+    .bez-main-image {
+        height: 250px;
+    }
+
+    .bez-single-title-section,
+    .bez-single-specs {
+        padding: 20px 15px;
+    }
+
+    .bez-thumbnails {
+        gap: 8px;
+    }
+
+    .bez-thumbnail {
+        width: 60px;
+        height: 45px;
+    }
+
+    .bez-specs-title {
+        font-size: 1.5rem;
+    }
+
+    .bez-price-label,
+    .bez-price-value {
+        width: 100%;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .bez-single-page {
+        background: white !important;
+    }
+
+    .bez-back-button,
+    .bez-image-nav,
+    .bez-thumbnails {
+        display: none !important;
+    }
+
+    .bez-single-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bez-main-image {
+        height: 300px;
+        box-shadow: none;
+    }
+
+    .bez-single-title,
+    .bez-specs-title,
+    .bez-spec-item h3 {
+        color: #000 !important;
+    }
+
+    .bez-price-value {
+        color: #000 !important;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .bez-back-button,
+    .bez-main-image img,
+    .bez-spec-item,
+    .bez-thumbnail,
+    .bez-image-nav {
+        transition: none !important;
+    }
+
+    .bez-main-image:hover img {
+        transform: none !important;
+    }
+}
+
+/* Focus styles for accessibility */
+.bez-back-button:focus,
+.bez-thumbnail:focus,
+.bez-image-nav:focus {
+    outline: 2px solid #2E7D32;
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .bez-spec-item {
+        border: 2px solid #333;
+    }
+
+    .bez-single-title-section,
+    .bez-single-specs {
+        border: 2px solid #333;
+    }
+}

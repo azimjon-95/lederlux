@@ -8,6 +8,7 @@ import ManzilMapPage from './components/map/MapPage';
 import ContactForm from './components/sms/Sms';
 import AdminLogin from './components/login/Login';
 import AdminDashboard from './admin/Dashboard';
+import ProductSinglePage from './components/singlePage/ProductSinglePage';
 // import './style.css';
 
 // Simulated token validation function (replace with your actual logic)
@@ -79,6 +80,7 @@ function App() {
           element={<ProtectedRoute element={<AdminDashboard />} />}
         />
         <Route path="/:lang/admin/servoce" element={<AdminLogin lang={lang} />} />
+        <Route path="/:name" element={<ProductSinglePage lang={lang} />} />
         <Route path="/ru" element={<HomePage lang="ru" />} />
         <Route path="/en" element={<HomePage lang="en" />} />
         <Route path="/uz" element={<HomePage lang="uz" />} />
