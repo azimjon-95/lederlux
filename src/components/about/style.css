@@ -526,6 +526,172 @@ html {
     font-size: 0.9rem;
 }
 
+
+
+
+
+.abu-contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.abu-contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.abu-contact-card:hover::before {
+    left: 100%;
+}
+
+.abu-contact-card:hover {
+    transform: translateY(-5px);
+    border-color: #FFD700;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+.abu-contact-icon {
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+.abu-contact-card h3 {
+    color: #FFD700;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.abu-phone-link {
+    color: white;
+    text-decoration: none;
+
+    font-size: 1.import React,
+
+}
+
+/* Social Media Section */
+.abu-social-media {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.abu-social-media:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #FFD700;
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+.abu-social-title {
+    color: #FFD700;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.abu-social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.abu-social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.abu-social-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.abu-social-btn:hover::before {
+    left: 100%;
+}
+
+.abu-instagram {
+    background: linear-gradient(45deg, #FFD700, #ffa500);
+    color: #1a1a1a;
+}
+
+.abu-instagram:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
+
+.abu-telegram {
+    background: transparent;
+    color: white;
+    border: 2px solid #FFD700;
+}
+
+.abu-telegram:hover {
+    background: #FFD700;
+    color: #1a1a1a;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design for Social Media */
+@media (max-width: 768px) {
+    .abu-social-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .abu-social-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .abu-social-media {
+        padding: 1.5rem;
+    }
+
+    .abu-social-title {
+        font-size: 1.3rem;
+    }
+
+    .abu-social-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {

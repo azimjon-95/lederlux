@@ -1,255 +1,249 @@
-import React, { useState, useEffect } from "react";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
-import Loading from "./Loading";
-import axios from "../../api";
-import { rolePaths } from "../../routes/Routes";
-import {
-  Eye,
-  EyeOff,
-  Factory,
-  Shield,
-  User,
-  Lock,
-  ArrowRight,
-} from "lucide-react";
-import "./login.css";
+import React, { useState, useEffect } from 'react';
+import { Eye, EyeOff, Lock, User, Factory, Shield, ChevronRight } from 'lucide-react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import './login.css';
 
-const Login = () => {
-  const [authMode, setAuthMode] = useState(() => {
-    const savedAuthMode = localStorage.getItem("authMode");
-    return savedAuthMode !== null ? JSON.parse(savedAuthMode) : true;
+const translations = {
+  uz: {
+    title: 'Administrator Paneli',
+    usernamePlaceholder: 'Foydalanuvchi nomi',
+    passwordPlaceholder: 'Parol',
+    submitButton: 'Kirish',
+    loading: 'Tekshirilmoqda...',
+    securityBadge: 'Xavfsiz ulanish',
+    copyright: '© 2025 LiderLux MCHJ. Barcha huquqlar himoyalangan.',
+    sidePanelTitle: 'Natriy Nitrat',
+    molecularMass: 'Molekular massa',
+    solubility: 'Erishuvchanlik',
+    color: 'Rang',
+    molecularMassValue: '84.99 g/mol',
+    solubilityValue: 'Yuqori',
+    colorValue: 'Rangsiz',
+    error: "Kirish amalga oshirilmadi. Iltimos, qayta urinib ko'ring.",
+  },
+  ru: {
+    title: 'Панель администратора',
+    usernamePlaceholder: 'Имя пользователя',
+    passwordPlaceholder: 'Пароль',
+    submitButton: 'Войти',
+    loading: 'Проверка...',
+    securityBadge: 'Безопасное соединение',
+    copyright: '© 2025 LiderLux MCHJ. Все права защищены.',
+    sidePanelTitle: 'Нитрат натрия',
+    molecularMass: 'Молекулярная масса',
+    solubility: 'Растворимость',
+    color: 'Цвет',
+    molecularMassValue: '84.99 г/моль',
+    solubilityValue: 'Высокая',
+    colorValue: 'Бесцветный',
+    error: 'Вход не удался. Пожалуйста, повторите попытку.',
+  },
+  en: {
+    title: 'Administrator Panel',
+    usernamePlaceholder: 'Username',
+    passwordPlaceholder: 'Password',
+    submitButton: 'Login',
+    loading: 'Checking...',
+    securityBadge: 'Secure Connection',
+    copyright: '© 2025 LiderLux MCHJ. All rights reserved.',
+    sidePanelTitle: 'Sodium Nitrate',
+    molecularMass: 'Molecular Mass',
+    solubility: 'Solubility',
+    color: 'Color',
+    molecularMassValue: '84.99 g/mol',
+    solubilityValue: 'High',
+    colorValue: 'Colorless',
+    error: 'Login failed. Please try again.',
+  },
+};
+
+const AdminLogin = () => {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
   });
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-    pin: "",
-  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [loginError, setLoginError] = useState('');
+  const [selectedLang, setSelectedLang] = useState(
+    localStorage.getItem('lang') || localStorage.getItem('language') || 'ru'
+  );
 
   useEffect(() => {
-    localStorage.setItem("authMode", JSON.stringify(authMode));
-  }, [authMode]);
+    localStorage.setItem('lang', selectedLang);
+  }, [selectedLang]);
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    if (loginError) setLoginError('');
   };
 
-  const clearForm = () => {
-    setFormData({ username: "", password: "", pin: "" });
-    setShowPassword(false);
+  const handleLangChange = (lang) => {
+    setSelectedLang(lang);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data =
-      authMode === true
-        ? {
-          login: formData.username.trim(),
-          password: formData.password.trim(),
-        }
-        : { pin: formData.pin.trim() };
-
-    if (!data.login && !data.pin) {
-      toast.warn("Iltimos, login yoki PIN kodini kiriting!");
-      return;
-    }
-
-    setLoading(true);
-
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    setLoginError('');
     try {
-      const endpoint = authMode === true ? "/admin/login" : "/admin/pin";
-
-      const res = await axios.post(endpoint, data);
-      const { message: successMessage, innerData } = res.data;
-      const doctorName = `${innerData?.employee?.firstName || ""} ${innerData?.employee?.lastName || ""
-        }`.trim();
-
-      const role = innerData?.employee?.unit?.toLowerCase() || "unknown";
-      localStorage.setItem("workerId", innerData?.employee?._id);
-      localStorage.setItem("admin_fullname", doctorName);
-      localStorage.setItem("token", innerData?.token);
-      localStorage.setItem("role", role);
-
-      toast.success(successMessage || "Muvaffaqiyatli tizimga kirdingiz!");
-      clearForm();
-
-      navigate(rolePaths[role] || "/login");
-    } catch (error) {
-      const errorMessage =
-        error.response?.data?.message || "Tizimga kirishda xatolik yuz berdi!";
-      toast.error(errorMessage);
+      const res = await axios.post('https://liderlux-two.vercel.app/api/admin/login', formData);
+      if (res.data?.innerData) {
+        localStorage.setItem('token', res.data.innerData.token);
+        navigate(`/admin/${res.data.innerData.token}/dashboard`); // Corrected: Call navigate as a function
+      }
+    } catch (err) {
+      console.log(err);
+      setLoginError(translations[selectedLang].error || 'Login failed. Please try again.');
     } finally {
-      setLoading(false);
+      setIsLoading(false);
+    }
+  };
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSubmit();
     }
   };
 
-  if (loading) {
-    return <Loading />;
-  }
+  const t = translations[selectedLang];
 
   return (
-    <div className="bpf-authentication-wrapper">
-      <ToastContainer />
-      <div className="bpf-animated-background-overlay">
-        <div className="bpf-floating-paper-roll-primary"></div>
-        <div className="bpf-floating-paper-roll-secondary"></div>
-        <div className="bpf-floating-paper-roll-tertiary"></div>
+    <div className="log-container">
+      <div className="log-background">
+        <div className="log-particles"></div>
+        <div className="log-grid"></div>
       </div>
 
-      <div className="bpf-industrial-silhouette-container">
-        <div className="bpf-factory-architectural-layout">
-          <div className="bpf-manufacturing-building-primary"></div>
-          <div className="bpf-industrial-chimney-primary"></div>
-          <div className="bpf-manufacturing-building-secondary"></div>
-          <div className="bpf-industrial-chimney-secondary"></div>
-        </div>
-      </div>
-
-      <div className="bpf-authentication-container-wrapper">
-        <div className="bpf-brand-identity-section">
-          <div className="bpf-corporate-logo-container">
-            <Factory className="w-10 h-10 text-white" />
+      <div className="log-content">
+        <div className="log-header">
+          <div className="log-logo">
+            <Factory className="log-factory-icon" />
+            <div className="log-formula">NaNO₃</div>
           </div>
-          <h1 className="bpf-company-title-primary">POP POLIZOL</h1>
-          <p className="bpf-system-description-subtitle">
-            CRM Boshqaruv Tizimi
+          <h1 className="log-title">LiderLux</h1>
+          <p className="log-subtitle">{t.title}</p>
+        </div>
+
+        <div className="log-form">
+          <div className="log-input-group">
+            <div className="log-input-container">
+              <User className="log-input-icon" />
+              <input
+                type="text"
+                name="username"
+                placeholder={t.usernamePlaceholder}
+                value={formData.username}
+                onChange={handleInputChange}
+                onKeyPress={handleKeyPress}
+                className="log-input"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="log-input-group">
+            <div className="log-input-container">
+              <Lock className="log-input-icon" />
+              <input
+                type={showPassword ? 'text' : 'password'}
+                name="password"
+                placeholder={t.passwordPlaceholder}
+                value={formData.password}
+                onChange={handleInputChange}
+                onKeyPress={handleKeyPress}
+                className="log-input"
+                required
+              />
+              <button
+                type="button"
+                className="log-password-toggle"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
+          </div>
+
+          {loginError && (
+            <div className="log-error">
+              <Shield size={16} />
+              {loginError}
+            </div>
+          )}
+
+          <button
+            type="button"
+            className={`log-submit-btn ${isLoading ? 'log-loading' : ''}`}
+            onClick={handleSubmit}
+            disabled={isLoading}
+          >
+            <span className="log-btn-text">
+              {isLoading ? t.loading : t.submitButton}
+            </span>
+            {!isLoading && <ChevronRight className="log-btn-icon" />}
+            {isLoading && <div className="log-spinner"></div>}
+          </button>
+        </div>
+
+        <div className="log-language-selector">
+          <p
+            className={selectedLang === 'uz' ? 'log-lang-active' : ''}
+            onClick={() => handleLangChange('uz')}
+          >
+            uz
+          </p>
+          <p
+            className={selectedLang === 'ru' ? 'log-lang-active' : ''}
+            onClick={() => handleLangChange('ru')}
+          >
+            ru
+          </p>
+          <p
+            className={selectedLang === 'en' ? 'log-lang-active' : ''}
+            onClick={() => handleLangChange('en')}
+          >
+            en
           </p>
         </div>
-        {authMode === true ? (
-          <div className="bpf-authentication-panel-container">
-            <div className="bpf-form-fields-container">
-              <div className="bpf-input-field-grouping-wrapper">
-                <label
-                  htmlFor="username"
-                  className="bpf-field-label-typography"
-                >
-                  Foydalanuvchi nomi
-                </label>
-                <div className="bpf-interactive-input-container">
-                  <div className="bpf-input-icon-positioning-wrapper">
-                    <User className="w-5 h-5" />
-                  </div>
-                  <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    value={formData.username}
-                    onChange={handleInputChange}
-                    className="bpf-primary-text-input-field"
-                    placeholder="Foydalanuvchi nomingizni kiriting"
-                    required
-                  />
-                </div>
-              </div>
 
-              <div className="bpf-input-field-grouping-wrapper">
-                <label
-                  htmlFor="password"
-                  className="bpf-field-label-typography"
-                >
-                  Parol
-                </label>
-                <div className="bpf-interactive-input-container">
-                  <div className="bpf-input-icon-positioning-wrapper">
-                    <Lock className="w-5 h-5" />
-                  </div>
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    id="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    className="bpf-password-input-field"
-                    placeholder="Parolingizni kiriting"
-                    required
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="bpf-password-visibility-toggle-button"
-                  >
-                    {showPassword ? (
-                      <EyeOff className="w-5 h-5" />
-                    ) : (
-                      <Eye className="w-5 h-5" />
-                    )}
-                  </button>
-                </div>
-              </div>
+        <div className="log-footer">
+          <div className="log-security-badge">
+            <Shield size={16} />
+            <span>{t.securityBadge}</span>
+          </div>
+          <p className="log-copyright">{t.copyright}</p>
+        </div>
+      </div>
 
-              <button
-                onClick={handleSubmit}
-                className="bpf-primary-authentication-button"
-              >
-                <span>CRM tizimiga kirish</span>
-                <ArrowRight className="w-5 h-5 bpf-button-icon-animation-wrapper" />
-              </button>
+      <div className="log-side-panel">
+        <div className="log-chemical-formula">
+          <h3>{t.sidePanelTitle}</h3>
+          <div className="log-formula-large">NaNO₃</div>
+          <div className="log-properties">
+            <div className="log-property">
+              <span className="log-property-label">{t.molecularMass}:</span>
+              <span className="log-property-value">{t.molecularMassValue}</span>
+            </div>
+            <div className="log-property">
+              <span className="log-property-label">{t.solubility}:</span>
+              <span className="log-property-value">{t.solubilityValue}</span>
+            </div>
+            <div className="log-property">
+              <span className="log-property-label">{t.color}:</span>
+              <span className="log-property-value">{t.colorValue}</span>
             </div>
           </div>
-        ) : (
-          <div className="bpf-authentication-panel-container">
-            <div className="bpf-form-fields-container">
-              <label htmlFor="pin" className="rgh-pin-label">
-                PIN Kod
-              </label>
-              <div className="rgh-pin-input-wrapper">
-                <div className="rgh-pin-input-icon">
-                  <Lock className="w-5 h-5 text-blue-300" />
-                </div>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  id="pin"
-                  name="pin"
-                  value={formData.pin}
-                  onChange={handleInputChange}
-                  className="rgh-pin-input-field"
-                  placeholder="PIN kodingizni kiriting"
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="rgh-pin-visibility-toggle"
-                >
-                  {showPassword ? (
-                    <EyeOff className="w-5 h-5 text-blue-300" />
-                  ) : (
-                    <Eye className="w-5 h-5 text-blue-300" />
-                  )}
-                </button>
-              </div>
-
-              <button
-                onClick={handleSubmit}
-                className="bpf-primary-authentication-button"
-              >
-                <span>CRM tizimiga kirish</span>
-                <ArrowRight className="w-5 h-5 bpf-button-icon-animation-wrapper" />
-              </button>
-            </div>
-          </div>
-        )}
-        <div
-          onClick={() => setAuthMode(!authMode)}
-          className="bpf-security-certification-badge"
-        >
-          <Shield className="w-4 h-4" />
-          <span className="bpf-security-badge-text">Xavfsiz ulanish</span>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
-
-
+export default AdminLogin;
 
 

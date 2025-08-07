@@ -32,18 +32,25 @@ export const translations = {
                 "Qishloq xo'jaligi uchun ideal",
                 "Suvda yaxshi eriydi",
             ],
-            productFeatures: "Ma'lumki, Farg’ona vodiysi o’sha davrlarda O’zbekiston qishloq xo’jaligining asosiy sohasi – paxtachilik bo’yicha yetakchi o’rinda turar edi. Sug’oriladigan va paxta yetishtiriladigan asosiy maydonlar vodiyda joylashgan bo’lib, bu sohani yanada rivojlantirish, vodiyning poyonsiz bog’larida yetishtiriladigan meva va sabzavotlar hosildorligini oshirish uchun yerning quvvatiga quvvat qo’shadigan mineral o’g’itlar ishlab chiqarishni yo’lga qo’yish talab etilar edi. Shunday qilib, “Farg’ona azotli o’g’itlar zavodi” kuchli hayotiy ehtiyoj tufayli dunyoga keldi. Korxonamiz jamoasi birinchi Prezidentimiz I.A.Karimov tomonidan ishlab chiqilgan va belgilangan taraqqiyot tamoyillariga amal qilib, o’tish davrining barcha qiyinchiliklariga bardosh berdi. Bosqichma-bosqich bozor iqtisodiyotiga o’tish, mulk shaklini o’zgartirib, korxonani aksiyadorlik jamiyatiga aylantirish kabi tub iqtisodiy islohotlar amalga oshirildi. Oldimizda korxonani yanada takomillashtirish, davlat dasturiga kiritilgan loyihalarni o’zlashtirish, jahon standartlariga mos, raqobatbardosh, xaridorgir mahsulotlar ishlab chiqarishni yo’lga qo’yish, ularning hajmi va sifatini yanada yaxshilashdek muhim vazifalar turibdi. Bunday keng ko’lamli rejalarni ro’yobga chiqarish uchun jamoamizda tajriba va imkoniyat, bilim va sabot, kuch-g’ayrat yetarli. Bosib o’tilgan yarim asrlik shonli yo’l davomida matonatli kishilar mehnati bilan qo’lga kiritilgan obro’-e'tiborni saqlab qolish, yaxshi an'analarni davom ettirish bugungi avlodning muqaddas burchidir.,"
+            productFeatures: "Ma'lumki, Farg’ona vodiysi o’sha davrlarda O’zbekiston qishloq xo’jaligining asosiy sohasi – paxtachilik bo’yicha yetakchi o’rinda turar edi. Sug’oriladigan va paxta yetishtiriladigan asosiy maydonlar vodiyda joylashgan bo’lib, bu sohani yanada rivojlantirish, vodiyning poyonsiz bog’larida yetishtiriladigan meva va sabzavotlar hosildorligini oshirish uchun yerning quvvatiga quvvat qo’shadigan mineral o’g’itlar ishlab chiqarishni yo’lga qo’yish talab etilar edi. Shunday qilib, “Farg’ona azotli o’g’itlar zavodi” kuchli hayotiy ehtiyoj tufayli dunyoga keldi. Korxonamiz jamoasi birinchi Prezidentimiz I.A.Karimov tomonidan ishlab chiqilgan va belgilangan taraqqiyot tamoyillariga amal qilib, o’tish davrining barcha qiyinchiliklariga bardosh berdi. Bosqichma-bosqich bozor iqtisodiyotiga o’tish, mulk shaklini o’zgartirib, korxonani aksiyadorlik jamiyatiga aylantirish kabi tub iqtisodiy islohotlar amalga oshirildi. Oldimizda korxonani yanada takomillashtirish, davlat dasturiga kiritilgan loyihalarni o’zlashtirish, jahon standartlariga mos, raqobatbardosh, xaridorgir mahsulotlar ishlab chiqarishni yo’lga qo’yish, ularning hajmi va sifatini yanada yaxshilashdek muhim vazifalar turibdi. Bunday keng ko’lamli rejalarni ro’yobga chiqarish uchun jamoamizda tajriba va imkoniyat, bilim va sabot, kuch-g’ayrat yetarli. Bosib o’tilgan yarim asrlik shonli yo’l davomida matonatli kishilar mehnati bilan qo’lga kiritilgan obro’-e'tiborni saqlab qolish, yaxshi an'analarni davom ettirish bugungi avlodning muqaddas burchidir.",
         },
         contact: {
             title: "Biz bilan bog'lanish",
             subtitle: "Har qanday savol yoki buyurtma uchun",
             address: "Farg'ona viloyati, Toshloq tumani, Ahshak MFY, Besholish ko'chasi",
+            main: "Asosiy ofis",
             sales: "Sotuv bo'limi",
             salesPhone: "+998 50 079 20 20",
+            procurement: "Xaridlar bo'limi",
+            accounting: "Buxgalteriya bo'limi",
+            spareParts: "Ehtiyot qismlar",
+            personnel: "Kadrlar bo'limi",
             info: "Ma'lumotnoma",
             infoPhone: "+998 99 997 44 40",
             workingHours: "Ish vaqti",
             hours: ["Dushanba - Juma: 09:00 - 18:00", "Shanba: 09:00 - 13:00"],
+            social: 'Ijtimoiy tarmoqlar'
+
         },
         footer: {
             copyright: "© 2025 Liderlux МЧЖ. Barcha huquqlar himoyalangan.",
@@ -89,18 +96,23 @@ export const translations = {
                 "Хорошо растворяется в воде",
             ],
             productFeatures: "Известно, что Ферганская долина в те времена занимала лидирующие позиции в Узбекистане по хлопководству – основной отрасли сельского хозяйства. Основные площади орошаемых и хлопковых полей располагались в долине, и для дальнейшего развития этой отрасли, а также для повышения урожайности фруктов и овощей, выращиваемых в бескрайних садах долины, требовалось наладить производство минеральных удобрений, которые бы укрепляли плодородие почвы. Таким образом, «Ферганский завод азотных удобрений» появился благодаря насущной жизненной необходимости. Команда нашего предприятия, следуя принципам развития, разработанным и установленным первым Президентом И.А. Каримовым, выдержала все трудности переходного периода. Поэтапно осуществлялся переход к рыночной экономике, смена формы собственности и преобразование предприятия в акционерное общество, что сопровождалось глубокими экономическими реформами. Перед нами стоят важные задачи по дальнейшему совершенствованию предприятия, освоению проектов, включённых в государственную программу, налаживанию производства конкурентоспособной продукции, соответствующей мировым стандартам, а также улучшению её объёмов и качества. Для реализации таких масштабных планов у нашей команды достаточно опыта и возможностей, знаний и упорства, силы и энтузиазма. Сохранение репутации, завоёванной трудом стойких людей за полувековой славный путь, и продолжение добрых традиций – священный долг сегодняшнего поколения."
-
         },
         contact: {
             title: "Свяжитесь с нами",
             subtitle: "Для любых вопросов или заказов",
             address: "Ферганская область, Ташлакский район, Ашкак МФЙ, улица Бешолиш",
+            main: "Главный офис",
             sales: "Отдел продаж",
             salesPhone: "+998 50 079 20 20",
+            procurement: "Отдел закупок",
+            accounting: "Бухгалтерский отдел",
+            spareParts: "Запасные части",
+            personnel: "Отдел кадров",
             info: "Справочная",
             infoPhone: "+998 99 997 44 40",
             workingHours: "Часы работы",
             hours: ["Понедельник - Пятница: 09:00 - 18:00", "Суббота: 09:00 - 13:00"],
+            social: 'Следите за нами'
         },
         footer: {
             copyright: "© 2025 ООО Лидерлюкс. Все права защищены.",
@@ -151,12 +163,18 @@ export const translations = {
             title: "Contact Us",
             subtitle: "For any questions or orders",
             address: "Fergana Region, Tashlak District, Akshak MFY, Besholish Street",
+            main: "Main Office",
             sales: "Sales Department",
             salesPhone: "+998 50 079 20 20",
+            procurement: "Procurement Department",
+            accounting: "Accounting Department",
+            spareParts: "Spare Parts",
+            personnel: "Personnel Department",
             info: "Information Desk",
             infoPhone: "+998 99 997 44 40",
             workingHours: "Working Hours",
             hours: ["Monday - Friday: 09:00 - 18:00", "Saturday: 09:00 - 13:00"],
+            social: 'Follow Us'
         },
         footer: {
             copyright: "© 2025 Liderlux LLC. All rights reserved.",
@@ -170,5 +188,3 @@ export const translations = {
         },
     },
 };
-
-
