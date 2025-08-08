@@ -503,6 +503,10 @@
         min-height: 50px;
     }
 
+    .bez-products-section {
+        padding: 40px 0;
+    }
+
     .bez-product-price {
         font-size: 1.2rem;
     }

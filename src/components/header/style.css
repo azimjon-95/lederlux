@@ -75,6 +75,9 @@
     border: none;
     color: #FFD700;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+
     padding: 5px;
     border-radius: 4px;
     transition: background 0.3s ease;

@@ -51,6 +51,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+}
+
+.bez-slider-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to top,
+            #1a1a1a 30%, #ffffff00 100%);
 }
 
 .bez-slide {
@@ -309,7 +321,7 @@
 
 @media (max-width: 768px) {
     .bez-hero-slider {
-        height: 60vh;
+        height: 65vh;
         min-height: 400px;
     }
 
@@ -336,6 +348,8 @@
 
     .bez-about-content {
         grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
         gap: 30px;
     }
 
@@ -358,13 +372,47 @@
         padding: 0 10px;
     }
 
+    .bez-section-title {
+        margin-bottom: 10px;
+    }
+
+    .bez-about-section {
+        padding: 20px 0;
+    }
+
+    .bez-about-text {
+        padding: 0px 0;
+    }
+
+    .bez-company-title {
+        font-size: 1.3rem;
+        color: #FFD700;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    .bez-section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 42%;
+        width: 60px;
+        height: 4px;
+        background: #FFD700;
+        border-radius: 2px;
+    }
+
     .bez-hero-slider {
-        height: 30vh;
+        height: 35vh;
         min-height: 150px;
     }
 
     .bez-slide-title {
         font-size: 1.2rem;
+    }
+
+    .bez-about-img {
+        height: 250px;
     }
 
     .bez-slide-button {
