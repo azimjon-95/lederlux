@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { MapPin, Target, Search } from "lucide-react";
 import "./style.css";
 
-const ManzilMapPage = ({ long }) => {
+const ManzilMapPage = () => {
+  const long = localStorage.getItem("lang") || localStorage.getItem("language")
   const currentLocation = {
     lat: 40.449883,
     lng: 71.82734,

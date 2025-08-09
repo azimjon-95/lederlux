@@ -8,7 +8,7 @@
 
 /* Header Styles */
 .header {
-    background: #1a1a1a;
+    background: #fafafa;
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2rem 0;
@@ -24,7 +24,7 @@
 
 .header-content>h1 {
     font-size: 2.5rem;
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 30px;
     font-weight: 700;
     position: relative;
@@ -34,18 +34,19 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid #002856;
+    color: #002856;
     padding: 0.5rem 1rem;
     border-radius: 50px;
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
     backdrop-filter: blur(10px);
-    
+
 }
 
 .formula-icon {
-    color: #fbbf24;
+    color: #002856;
 }
 
 .header h1 {
@@ -99,7 +100,7 @@
 
 /* Navigation Styles */
 .navigation {
-    background: rgba(67, 67, 67, 0.95);
+    background-color: #002856;
     backdrop-filter: blur(20px);
     padding: 1rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -130,7 +131,7 @@
     font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    color: #8499b7;
+    color: #96a9c3;
 }
 
 .nav-item:hover {
@@ -140,8 +141,8 @@
 }
 
 .nav-item.active {
-    background: #1a1a1a;
-    color: #FFD700;
+    background: #fafafa;
+    color: #002856;
     box-shadow: 0 1px 20px #ffd90060;
 }
 
@@ -163,12 +164,12 @@
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 2rem;
-    color: white;
+    color: #002856;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .section-icon {
-    background: #FFD700;
+    background: #002856;
     padding: 0.75rem;
     border-radius: 12px;
     backdrop-filter: blur(10px);
@@ -202,7 +203,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+    background: linear-gradient(90deg, #002856, #8b5cf6, #ec4899);
 }
 
 .card:hover {
@@ -422,7 +423,7 @@
 
 /* Highlight */
 .highlight {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
+    background: linear-gradient(135deg, #1d86ff, #002856);
     color: white;
     padding: 0.75rem;
     border-radius: 10px;

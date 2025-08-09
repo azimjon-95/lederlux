@@ -18,7 +18,6 @@ const CertificatesGallery = ({ lang }) => {
   // Translation object for ru, en, uz
   const translations = {
     en: {
-      header: "LIDERLUX Certificates",
       subtitle: "Official Documentation & Quality Certifications",
       viewCertificate: "View Certificate",
       certificateDetails: "Certificate Details",
@@ -54,7 +53,6 @@ const CertificatesGallery = ({ lang }) => {
       ],
     },
     ru: {
-      header: "Сертификаты LIDERLUX",
       subtitle: "Официальная документация и сертификаты качества",
       viewCertificate: "Посмотреть сертификат",
       certificateDetails: "Детали сертификата",
@@ -90,7 +88,6 @@ const CertificatesGallery = ({ lang }) => {
       ],
     },
     uz: {
-      header: "LIDERLUX Sertifikatlari",
       subtitle: "Rasmiy hujjatlar va sifat sertifikatlari",
       viewCertificate: "Sertifikatni ko'rish",
       certificateDetails: "Sertifikat tafsilotlari",
@@ -147,7 +144,6 @@ const CertificatesGallery = ({ lang }) => {
   return (
     <div className="set-container">
       <div className="set-header">
-        <h1 className="set-title">{t.header}</h1>
         <p className="set-subtitle">{t.subtitle}</p>
       </div>
 
@@ -155,9 +151,8 @@ const CertificatesGallery = ({ lang }) => {
         {t.certificates.map((certificate, index) => (
           <div
             key={certificate.id}
-            className={`set-certificate-card ${
-              isLoaded ? "set-animate-in" : ""
-            }`}
+            className={`set-certificate-card ${isLoaded ? "set-animate-in" : ""
+              }`}
             style={{ animationDelay: `${index * 0.2}s` }}
             onClick={() => openCertificate(certificate)}
           >
@@ -200,9 +195,8 @@ const CertificatesGallery = ({ lang }) => {
                 <img
                   src={selectedCertificate.image}
                   alt={selectedCertificate.title}
-                  className={`set-modal-certificate-image ${
-                    isZoomed ? "zoomed" : ""
-                  }`}
+                  className={`set-modal-certificate-image ${isZoomed ? "zoomed" : ""
+                    }`}
                   onClick={toggleZoom}
                   style={{ cursor: isZoomed ? "zoom-out" : "zoom-in" }}
                 />

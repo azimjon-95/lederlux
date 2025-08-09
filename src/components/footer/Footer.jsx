@@ -14,7 +14,7 @@ function Footer({ lang = "ru" }) {
       },
       products: {
         title: "Продукция",
-        items: ["Аммиак", "Карбамид", "Нитраты"],
+        items: ["Минеральные удобрения", "Нитраты"],
       },
       about: {
         title: "О компании",
@@ -31,7 +31,7 @@ function Footer({ lang = "ru" }) {
       },
       products: {
         title: "Products",
-        items: ["Ammonia", "Urea", "Nitrates"],
+        items: ["Chemical Products", "Nitrates"],
       },
       about: {
         title: "About the Company",
@@ -48,7 +48,7 @@ function Footer({ lang = "ru" }) {
       },
       products: {
         title: "Mahsulotlar",
-        items: ["Ammiak", "Karbamid", "Nitratlar"],
+        items: ["Mineral o’g’itlar", "Nitratlar"],
       },
       about: {
         title: "Kompaniya haqida",
@@ -63,7 +63,7 @@ function Footer({ lang = "ru" }) {
 
   // Route paths for the "About" section (lowercase for consistency)
   const aboutRoutes = ["about", "contact", "map"];
-  const prodactRoutes = ["products", "products", "nitrat"];
+  const prodactRoutes = ["products", "nitrat"];
 
   return (
     <footer className="bez-footer">

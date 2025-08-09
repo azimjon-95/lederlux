@@ -7,9 +7,11 @@ import {
   Star,
   CheckCircle,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const ContactForm = () => {
+  const navigate = useNavigate();
   const [feedback, setFeedback] = useState({
     name: "",
     phone: "",
@@ -51,11 +53,10 @@ const ContactForm = () => {
                 
                 👤 *Ism-familiya:* ${feedback.name}
                 📞 *Telefon:* ${feedback.phone}
-                ${
-                  feedback.telegram
-                    ? `📱 *Telegram:* @${feedback.telegram}`
-                    : ""
-                }
+                ${feedback.telegram
+          ? `📱 *Telegram:* @${feedback.telegram}`
+          : ""
+        }
                 ⭐ *Reyting:* ${feedback.rating}/5
                 
                 📝 *Xabar:*
@@ -210,9 +211,8 @@ const ContactForm = () => {
                 <button
                   key={star}
                   type="button"
-                  className={`sms-star ${
-                    star <= feedback.rating ? "sms-star-active" : ""
-                  }`}
+                  className={`sms-star ${star <= feedback.rating ? "sms-star-active" : ""
+                    }`}
                   onClick={() => handleRatingChange(star)}
                 >
                   <Star size={24} />
@@ -236,27 +236,28 @@ const ContactForm = () => {
               required
             />
           </div>
-
-          <button
-            onClick={handleSubmit}
-            type="submit"
-            className={`sms-btn sms-btn-primary ${
-              isSubmitting ? "sms-btn-loading" : ""
-            }`}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? (
-              <>
-                <div className="sms-spinner"></div>
-                Yuborilmoqda...
-              </>
-            ) : (
-              <>
-                <Send size={20} />
-                Xabar yuborish
-              </>
-            )}
-          </button>
+          <div className="description_btn">
+            <button onClick={() => navigate(-1)} className="description_button">Orqaga</button>
+            <button
+              onClick={handleSubmit}
+              type="submit"
+              className={`sms-btn sms-btn-primary ${isSubmitting ? "sms-btn-loading" : ""
+                }`}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="sms-spinner"></div>
+                  Yuborilmoqda...
+                </>
+              ) : (
+                <>
+                  <Send size={20} />
+                  Xabar yuborish
+                </>
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </div>

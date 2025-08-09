@@ -10,52 +10,45 @@ const Main = ({ lang = "ru" }) => {
   const content = {
     en: {
       slides: [
-        { title: "Chemical Products", subtitle: "Learn More", icon: "🌱" },
-        { title: "Mineral Fertilizers", subtitle: "Learn More", icon: "⚗️" },
+        { title: "Chemical Products", subtitle: "Learn More", icon: "⚗️" },
+        { title: "Mineral Fertilizers", subtitle: "Learn More", icon: "🌱" },
         { title: "Raw Materials", subtitle: "Learn More", icon: "🧪" },
       ],
       about: {
         sectionTitle: "About Us",
         companyTitle: "LiderLux LLC",
         description: [
-          "LIDERLUX MCHJ is a modern enterprise operating in the chemical industry, specializing in the production of high-quality chemical raw materials and mineral fertilizers. One of our core areas of activity is the production of technical-grade sodium nitrate (NaNO₃) for industrial applications.",
+          "LIDERLUX MCHJ is a modern enterprise operating in the chemical industry, specializing in the production of high-quality chemical raw materials and mineral fertilizers. One of our core areas of activity is the production of technical-grade sodium nitrate  for industrial applications.",
         ],
         button: "Learn More",
       },
     },
     ru: {
       slides: [
-        { title: "Химическая продукция", subtitle: "Подробнее", icon: "🌱" },
-        { title: "Минеральные удобрения", subtitle: "Подробнее", icon: "⚗️" },
+        { title: "Химическая продукция", subtitle: "Подробнее", icon: "⚗️" },
+        { title: "Минеральные удобрения", subtitle: "Подробнее", icon: "🌱" },
         { title: "Сырьё", subtitle: "Подробнее", icon: "🧪" },
       ],
       about: {
         sectionTitle: "О компании",
         companyTitle: "ООО «LiderLux»",
         description: [
-          "Это современное предприятие, действующее в сфере химической промышленности и специализирующееся на производстве высококачественного химического сырья и минеральных удобрений. Одним из основных направлений нашей деятельности является производство технического нитрата натрия (натрий азотнокислый технический) для промышленных целей.",
+          "Это современное предприятие, действующее в сфере химической промышленности и специализирующееся на производстве высококачественного химического сырья и минеральных удобрений. Одним из основных направлений нашей деятельности является производство технического нитрата натрия для промышленных целей.",
         ],
         button: "Подробнее",
       },
     },
     uz: {
       slides: [
-        { title: "Kimyoviy mahsulotlar", subtitle: "Batafsil", icon: "🌱" },
-        { title: "Mineral o’g’itlar", subtitle: "Batafsil", icon: "⚗️" },
+        { title: "Kimyoviy mahsulotlar", subtitle: "Batafsil", icon: "⚗️" },
+        { title: "Mineral o’g’itlar", subtitle: "Batafsil", icon: "🌱" },
         { title: "Xom ashyo", subtitle: "Batafsil", icon: "🧪" },
       ],
       about: {
         sectionTitle: "Kompaniya haqida",
         companyTitle: "«LiderLux» MCHJ",
         description: [
-          "Bu kimyo sanoati sohasida faoliyat yurituvchi, yuqori sifatli kimyoviy xomashyo va mineral o‘g‘itlar ishlab chiqaruvchi zamonaviy korxona. Bizning asosiy yo‘nalishlarimizdan biri — texnik maqsadlar uchun mo‘ljallangan texnik natriy nitrati (natriy azotnokislotali texnik) ishlab chiqarishdir.",
-          "Biz o‘z ishlab chiqarish jarayonlarimizda xalqaro sifat standartlariga amal qilgan holda, barqaror va ekologik xavfsiz texnologiyalardan foydalanamiz. Mahsulotlarimiz sanoat, qishloq xo‘jaligi va boshqa yirik tarmoqlar ehtiyojlariga mos ravishda ishlab chiqariladi.",
-          "Biz har bir mijozimizga individual yondashuv, barqaror ta’minot va uzoq muddatli hamkorlikni taklif etamiz.",
-          "Asosiy maqsadimiz — mahalliy va xalqaro bozorlerde ishonchli, raqobatbardosh kimyoviy mahsulotlar bilan yetakchi bo‘lish.",
-          "Asosiy mahsulot: TEXNIK NATRIY NITRATI",
-          "Natriy azotnokislotali texnik (NaNO₃)",
-          "Sifat: ≥99%",
-          "Qo‘llanilishi: portlovchi moddalar, shisha va keramika sanoati, o‘g‘it ishlab chiqarish, metallga ishlov berish va boshqalar",
+          "Bu kimyo sanoati sohasida faoliyat yurituvchi, yuqori sifatli kimyoviy xomashyo va mineral o‘g‘itlar ishlab chiqaruvchi zamonaviy korxona. Bizning asosiy yo‘nalishlarimizdan biri — texnik maqsadlar uchun mo‘ljallangan texnik natriy nitrati  ishlab chiqarishdir.",
         ],
         button: "Batafsil",
       },
@@ -120,9 +113,8 @@ const Main = ({ lang = "ru" }) => {
             {selectedContent.slides.map((_, index) => (
               <button
                 key={index}
-                className={`bez-dot ${
-                  index === currentSlide ? "bez-dot-active" : ""
-                }`}
+                className={`bez-dot ${index === currentSlide ? "bez-dot-active" : ""
+                  }`}
                 onClick={() => setCurrentSlide(index)}
               />
             ))}
@@ -151,11 +143,11 @@ const Main = ({ lang = "ru" }) => {
                   {paragraph}
                 </p>
               ))}
-              {/* <Link to={`/${lang}/${"about"}`}>
+              <Link to={`/${lang}/${"about"}`}>
                 <button className="bez-about-button">
                   {selectedContent.about.button}
                 </button>
-              </Link> */}
+              </Link>
             </div>
           </div>
         </div>

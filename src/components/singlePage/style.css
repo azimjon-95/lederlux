@@ -208,7 +208,7 @@
 
 .bez-price-value {
     font-size: 2.2rem;
-    color: #FFD700;
+    color: #002856;
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(255, 215, 0, 0.2);
 }
@@ -338,46 +338,6 @@
     font-size: 1.2rem;
     color: #d32f2f;
     margin-bottom: 20px;
-}
-
-/* Dark Mode Styles */
-@media (prefers-color-scheme: dark) {
-    .bez-single-page {
-        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
-    }
-
-    .bez-single-title-section,
-    .bez-single-specs,
-    .bez-single-additional,
-    .bez-main-image {
-        background: #1e1e1e !important;
-        color: #ffffff;
-    }
-
-    .bez-single-title,
-    .bez-specs-title,
-    .bez-spec-item h3 {
-        color: #FFD700 !important;
-    }
-
-    .bez-spec-item {
-        background: linear-gradient(135deg, #2a2a2a 0%, #333 100%) !important;
-    }
-
-    .bez-spec-item p,
-    .bez-price-label,
-    .bez-meta-item span {
-        color: #cccccc !important;
-    }
-
-    .bez-spec-icon {
-        background: #333 !important;
-    }
-
-    .bez-thumbnail,
-    .bez-single-error {
-        background: #2a2a2a !important;
-    }
 }
 
 /* Responsive Design */

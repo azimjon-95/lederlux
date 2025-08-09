@@ -62,7 +62,7 @@ function Header() {
   };
 
   return (
-    <header className="bez-header">
+    <div className="bez-header">
       <div className="bez-header-top-content">
         <Link to="/" className="bez-contact-img">
           <img src={logo} alt="Company logo" />
@@ -87,8 +87,8 @@ function Header() {
                   language === "ru"
                     ? "Введите запрос..."
                     : language === "en"
-                    ? "Enter your search..."
-                    : "Qidiruv so'zini kiriting..."
+                      ? "Enter your search..."
+                      : "Qidiruv so'zini kiriting..."
                 }
                 value={searchQuery}
                 onChange={handleSearchInputChange}
@@ -104,8 +104,8 @@ function Header() {
               {language === "ru"
                 ? "Поиск"
                 : language === "en"
-                ? "Search"
-                : "Qidirish"}
+                  ? "Search"
+                  : "Qidirish"}
             </span>
           </button>
         </div>
@@ -117,8 +117,10 @@ function Header() {
           </Select>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
 
 export default Header;
+
+

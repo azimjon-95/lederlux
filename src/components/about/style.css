@@ -8,7 +8,7 @@
 body,
 html {
     font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a;
+    background-color: #fafafa;
     color: white;
     line-height: 1.6;
     overflow-x: hidden;
@@ -18,14 +18,14 @@ html {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
 }
 
 /* Header Styles */
 .abu-header {
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid #FFD700;
+    border-bottom: 2px solid #002856;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -51,13 +51,13 @@ html {
 
 .abu-logo:hover {
     transform: scale(1.05);
-    color: #FFD700;
+    color: #002856;
 }
 
 .abu-logo span {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #FFD700;
+    color: #002856;
 }
 
 .abu-nav {
@@ -95,8 +95,8 @@ html {
 
 .abu-nav-item:hover,
 .abu-nav-item.abu-active {
-    background: linear-gradient(45deg, #FFD700, #ffa500);
-    color: #1a1a1a;
+    background: linear-gradient(45deg, #002856, #ffa500);
+    color: #fafafa;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
 }
@@ -138,7 +138,7 @@ html {
 }
 
 .abu-main-logo {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 1rem;
     animation: pulse 2s infinite;
 }
@@ -146,7 +146,7 @@ html {
 .abu-main-title {
     font-size: 3rem;
     margin: 1rem 0;
-    background: linear-gradient(45deg, #FFD700, #ffa500);
+    background: linear-gradient(45deg, #002856, #ffa500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -163,10 +163,10 @@ html {
 }
 
 .abu-highlight {
-    background: linear-gradient(45deg, #FFD700, #ffa500);
+    background: linear-gradient(45deg, #002856, #ffa500);
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
-    color: #1a1a1a;
+    color: #fafafa;
     font-weight: bold;
     display: inline-block;
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
@@ -175,18 +175,17 @@ html {
 
 .abu-hero-banner {
     text-align: center;
-    padding: 2rem 0 3rem;
+    padding: 2rem 0 0 0;
 }
 
 .abu-hero-icon {
-    color: #FFD700;
-    margin-bottom: 1rem;
+    color: #002856;
 }
 
 .abu-hero-title {
     font-size: 2.5rem;
-    margin: 1rem 0;
-    color: #FFD700;
+    margin: 1rem 0 0 0;
+    color: #002856;
 }
 
 .abu-hero-subtitle {
@@ -233,17 +232,17 @@ html {
 
 .abu-stat-card:hover {
     transform: translateY(-5px);
-    border-color: #FFD700;
+    border-color: #002856;
     box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
 }
 
 .abu-stat-card svg {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 1rem;
 }
 
 .abu-stat-card h4 {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 0.5rem;
 }
 
@@ -259,8 +258,9 @@ html {
     background: rgba(255, 255, 255, 0.03);
     padding: 2rem;
     border-radius: 15px;
-    border-left: 4px solid #FFD700;
+    border-left: 4px solid #002856;
     transition: all 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .abu-info-card:hover {
@@ -269,14 +269,18 @@ html {
 }
 
 .abu-card-icon {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 1rem;
 }
 
 .abu-info-card h3 {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 1rem;
     font-size: 1.3rem;
+}
+
+.abu-info-card p {
+    color: #626b74;
 }
 
 /* Product Highlight */
@@ -285,22 +289,23 @@ html {
     padding: 2rem;
     border-radius: 15px;
     margin: 3rem 0;
-    border: 1px solid rgba(255, 215, 0, 0.3);
+    border: 1px solid #002856;
 }
 
 .abu-product-highlight h2 {
-    color: #FFD700;
+    color: #002856;
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
 }
 
 .abu-product-spec h4 {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 1rem;
 }
 
 .abu-product-spec ul {
+    color: #002856;
     list-style: none;
     padding-left: 0;
 }
@@ -309,13 +314,15 @@ html {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    color: #002856;
+
 }
 
 .abu-product-spec li::before {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #FFD700;
+    color: #002856;
     font-weight: bold;
 }
 
@@ -332,41 +339,41 @@ html {
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    border: 1px solid rgba(255, 215, 0, 0.2);
+    border: 1px solid #002856;
+    box-shadow: 0 15px 35px #00285639;
+    color: #002856;
     transition: all 0.3s ease;
 }
 
 .abu-contact-card:hover {
     transform: translateY(-5px);
-    border-color: #FFD700;
+    border-color: #002856;
     background: rgba(255, 255, 255, 0.08);
 }
 
 .abu-contact-icon {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 1rem;
 }
 
 .abu-contact-card h3 {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 1rem;
 }
 
 .abu-contact-detail {
     line-height: 1.8;
+    color: #002856;
 }
 
 .abu-phone-link {
-    color: white;
+    color: #002856 !important;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.abu-phone-link:hover {
-    color: #FFD700;
-}
 
 /* Contact Form Alternative */
 .abu-contact-form {
@@ -378,7 +385,7 @@ html {
 }
 
 .abu-contact-form h3 {
-    color: #FFD700;
+    color: #002856;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -394,13 +401,14 @@ html {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    color: #002856;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
 }
 
 .abu-contact-mini-icon {
-    color: #FFD700;
+    color: #002856;
     flex-shrink: 0;
 }
 
@@ -412,7 +420,7 @@ html {
 }
 
 .abu-working-hours h4 {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 0.5rem;
 }
 
@@ -423,7 +431,7 @@ html {
 }
 
 .abu-cta-section h2 {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 2rem;
     font-size: 2rem;
 }
@@ -465,8 +473,8 @@ html {
 }
 
 .abu-primary {
-    background: linear-gradient(45deg, #FFD700, #ffa500);
-    color: #1a1a1a;
+    background: linear-gradient(45deg, #002856, #ffa500);
+    color: #fafafa;
 }
 
 .abu-primary:hover {
@@ -477,19 +485,19 @@ html {
 .abu-secondary {
     background: transparent;
     color: white;
-    border: 2px solid #FFD700;
+    border: 2px solid #002856;
 }
 
 .abu-secondary:hover {
-    background: #FFD700;
-    color: #1a1a1a;
+    background: #002856;
+    color: #fafafa;
     transform: translateY(-3px);
 }
 
 /* Footer */
 .abu-footer {
     background: rgba(26, 26, 26, 0.95);
-    border-top: 2px solid #FFD700;
+    border-top: 2px solid #002856;
     padding: 2rem 0;
     margin-top: auto;
 }
@@ -512,7 +520,7 @@ html {
 }
 
 .abu-footer-info svg {
-    color: #FFD700;
+    color: #002856;
 }
 
 .abu-footer-contact {
@@ -535,7 +543,7 @@ html {
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    border: 1px solid rgba(255, 215, 0, 0.2);
+    border: 1px solid rgba(0, 132, 255, 0.2);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -558,18 +566,18 @@ html {
 
 .abu-contact-card:hover {
     transform: translateY(-5px);
-    border-color: #FFD700;
+    border-color: #002856;
     background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 68, 255, 0.3);
 }
 
 .abu-contact-icon {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 1rem;
 }
 
 .abu-contact-card h3 {
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
@@ -589,18 +597,18 @@ html {
     padding: 2rem;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 15px;
-    border: 1px solid rgba(255, 215, 0, 0.2);
+    border: 1px solid rgba(0, 4, 255, 0.2);
     transition: all 0.3s ease;
 }
 
 .abu-social-media:hover {
     background: rgba(255, 255, 255, 0.08);
-    border-color: #FFD700;
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    border-color: #002856;
+    box-shadow: 0 10px 25px rgba(17, 0, 255, 0.3);
 }
 
 .abu-social-title {
-    color: #FFD700;
+    color: #002856;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -642,24 +650,24 @@ html {
 }
 
 .abu-instagram {
-    background: linear-gradient(45deg, #FFD700, #ffa500);
-    color: #1a1a1a;
+    background: linear-gradient(45deg, #3794ff, #002856);
+    color: #fafafa;
 }
 
 .abu-instagram:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 42, 252, 0.701);
 }
 
 .abu-telegram {
+    background: linear-gradient(45deg, #002856, #3794ff) !important;
     background: transparent;
     color: white;
-    border: 2px solid #FFD700;
 }
 
 .abu-telegram:hover {
-    background: #FFD700;
-    color: #1a1a1a;
+    background: #002856;
+    color: #fafafa;
     transform: translateY(-3px);
 }
 

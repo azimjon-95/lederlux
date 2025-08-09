@@ -1,6 +1,6 @@
 .manzil-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: linear-gradient(135deg, #fafafa 0%, #c2c2c2 100%);
     position: relative;
 }
 
@@ -10,13 +10,13 @@
     z-index: 10;
     padding: 2rem 0;
     text-align: center;
-    background: linear-gradient(90deg, #2d2d2d, #1a1a1a);
+    background: linear-gradient(90deg, #2d2d2d, #fafafa);
 }
 
 
 .title {
     font-size: 2.5rem;
-    color: #FFD700;
+    color: #002856;
     margin-bottom: 30px;
     font-weight: 700;
     position: relative;
@@ -29,7 +29,7 @@
     left: 48% !important;
     width: 60px;
     height: 4px;
-    background: #FFD700;
+    background: #002856;
     border-radius: 2px;
 }
 
@@ -77,7 +77,7 @@
 }
 
 .search-btn {
-    background: #FFD700;
+    background: #002856;
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -87,7 +87,7 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: #1a1a1a;
+    color: #fafafa;
 }
 
 .search-btn:hover {
@@ -127,7 +127,7 @@
     justify-content: center;
     height: 100%;
     background: #2d2d2d;
-    color: #FFD700;
+    color: #002856;
     position: absolute;
     top: 0;
     left: 0;
@@ -139,7 +139,7 @@
     width: 50px;
     height: 50px;
     border: 3px solid #444;
-    border-top: 3px solid #FFD700;
+    border-top: 3px solid #002856;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-bottom: 1rem;
@@ -199,7 +199,7 @@
 }
 
 .zoom-in:hover {
-    color: #FFD700;
+    color: #002856;
 }
 
 .zoom-out:hover {
@@ -236,8 +236,8 @@
 }
 
 .type-btn.active {
-    background: #FFD700;
-    color: #1a1a1a;
+    background: #002856;
+    color: #fafafa;
     font-weight: bold;
 }
 
@@ -248,7 +248,7 @@
     right: 20px;
     width: 55px;
     height: 55px;
-    background: #FFD700;
+    background: #002856;
     border: none;
     border-radius: 50%;
     display: flex;
@@ -258,7 +258,7 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
     z-index: 5;
-    color: #1a1a1a;
+    color: #fafafa;
 }
 
 .location-btn:hover:not(:disabled) {
@@ -318,11 +318,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4rem;
-    background: rgba(45, 45, 45, 0.9);
+    background: rgb(255, 255, 255);
     margin: 2rem 2rem 0rem 2rem;
     border-radius: 15px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 215, 0, 0.2);
+    border: 1px solid #00285642;
 }
 
 .info-item {
@@ -332,7 +332,7 @@
 }
 
 .info-icon {
-    color: #FFD700;
+    color: #002856;
     flex-shrink: 0;
 }
 
@@ -343,7 +343,7 @@
 
 .location-text {
     font-size: 1.1rem;
-    color: #fff;
+    color: #002856;
     margin: 2px 0;
 }
 
@@ -354,9 +354,9 @@
 .coordinates-text {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #FFD700;
+    color: #002856;
     letter-spacing: 0.05em;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    text-shadow: 0 0 10px #002856;
     font-family: 'Courier New', monospace;
 }
 
@@ -432,7 +432,7 @@
 
     .manzil-container {
         min-height: 85vh;
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        background: linear-gradient(135deg, #fafafa 0%, #2d2d2d 100%);
         position: relative;
     }
 
@@ -492,7 +492,7 @@
 
 /* Success/Error States */
 .search-bar.success {
-    border-color: #FFD700;
+    border-color: #002856;
     box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
 }
 

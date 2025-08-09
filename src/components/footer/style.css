@@ -1,6 +1,6 @@
 /* Footer Styles */
 .bez-footer {
-    background: #2c5530;
+    background: #002856;
     color: white;
     padding: 60px 0 20px;
     margin-top: auto;
@@ -21,7 +21,7 @@
 .bez-footer-title {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: #FFD700;
+    color: #fff;
     font-weight: 600;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .bez-footer-links a:hover {
-    color: #FFD700;
+    color: #fff;
 }
 
 .bez-footer-bottom {
@@ -88,14 +88,9 @@
 }
 
 
-.bez-footer {
-    background: #1e1e1e !important;
-    /* Adjusted for dark mode */
-    border-bottom: 1px solid #333 !important;
-}
 
 .bez-footer-title {
-    color: #FFD700 !important;
+    color: #fff !important;
 }
 
 .bez-footer-links a {
@@ -103,7 +98,7 @@
 }
 
 .bez-footer-links a:hover {
-    color: #FFD700 !important;
+    color: #fff !important;
 }
 
 .bez-footer-bottom {

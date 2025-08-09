@@ -1,13 +1,14 @@
 /* Header Styles */
 .bez-header {
-  background: #1e1e1e !important;
+  background: #fafafa !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 7px 45px;
 
-  position: fixed; /* Safari uchun */
+  position: fixed;
+  /* Safari uchun */
   top: 0;
   z-index: 1000;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
@@ -35,7 +36,7 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.582);
+  color: #002856;
 }
 
 /* Search Panel Styles */
@@ -60,7 +61,7 @@ body {
 }
 
 .bez-search-input:focus {
-  border-color: #ffd700;
+  border-color: #002856;
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
 }
 
@@ -71,8 +72,8 @@ body {
 }
 
 .bez-btn-survey {
-  background: #ffd700;
-  color: #ffd700;
+  background: #fafafa;
+  color: #002856;
   border: none;
   padding: 6px 12px;
   border-radius: 4px;
@@ -88,7 +89,7 @@ body {
 .bez-btn-icon {
   background: none;
   border: none;
-  color: #ffd700;
+  color: #002856;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -105,10 +106,10 @@ body {
 .bez-btn-search {
   background: none;
   border: none;
-  color: #ffd700;
   cursor: pointer;
   display: flex;
   align-items: center;
+  color: #002856;
   gap: 5px;
   font-size: 14px;
   padding: 5px;
@@ -119,7 +120,7 @@ body {
 :where(.css-dev-only-do-not-override-mc1tut).ant-select .ant-select-arrow {
   display: flex;
   align-items: center;
-  color: #ffd700 !important;
+  color: #002856;
   font-style: normal;
   line-height: 1;
   text-align: center;
@@ -139,22 +140,23 @@ body {
   transition: opacity 0.3s ease;
 }
 
-:where(.css-dev-only-do-not-override-mc1tut).ant-select
-  .ant-select-arrow:active {
+:where(.css-dev-only-do-not-override-mc1tut).ant-select .ant-select-arrow:active {
   color: #ffffff00 !important;
   box-shadow: none #ffffff00 !important;
 }
 
 .ant-select-selection-item,
 .select-selection-item {
-  color: #ffd700 !important;
+  color: #002856;
+  !important;
 }
 
 .bez-language-selector .ant-select-selector {
   border: none !important;
   background: #ffffff00 !important;
   padding: 0 11px;
-  color: #ffd700 !important;
+  color: #002856;
+  !important;
 }
 
 .bez-btn-search:hover {
@@ -177,6 +179,7 @@ body {
 
 .bez-search-panel-box {
   position: relative;
+  color: #002856;
 }
 
 .bez-contact-img img {
@@ -246,35 +249,10 @@ body {
   }
 }
 
-/* Dark Mode Support for Header */
-@media (prefers-color-scheme: dark) {
-  .bez-header {
-    background: #1e1e1e !important;
-    border-bottom: 1px solid #333;
-  }
-
-  .bez-search-panel {
-    background: #1e1e1e;
-    border-bottom: 1px solid #333;
-  }
-
-  .bez-search-input {
-    background: #2a2a2a;
-    color: #fff;
-    border-color: #444;
-  }
-
-  .bez-search-input:focus {
-    border-color: #ffd700;
-  }
-
-  .bez-contact-info {
-    color: #ffe867b3;
-  }
-}
 
 /* Print Styles for Header */
 @media print {
+
   .bez-header-top-content,
   .bez-search-panel {
     display: none !important;
@@ -285,12 +263,13 @@ body {
 .bez-btn-icon:focus,
 .bez-btn-search:focus,
 .bez-search-input:focus {
-  outline: 2px solid #ffd700;
+  outline: 2px solid #fafafa;
   outline-offset: 2px;
 }
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   .bez-btn-icon,
   .bez-btn-search,
   .bez-search-input {
