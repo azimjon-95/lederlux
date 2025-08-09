@@ -63,6 +63,7 @@ function Footer({ lang = "ru" }) {
 
   // Route paths for the "About" section (lowercase for consistency)
   const aboutRoutes = ["about", "contact", "map"];
+  const prodactRoutes = ["products", "products", "nitrat"];
 
   return (
     <footer className="bez-footer">
@@ -79,7 +80,7 @@ function Footer({ lang = "ru" }) {
             <ul className="bez-footer-links">
               {selectedLang.products.items.map((item, index) => (
                 <li key={index}>
-                  <a href="#">{item}</a>
+                  <Link to={`/${lang}/${prodactRoutes[index]}`}>{item}</Link>
                 </li>
               ))}
             </ul>
