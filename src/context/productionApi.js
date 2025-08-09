@@ -2,66 +2,74 @@
 import { api } from "./api";
 
 export const productApi = api.injectEndpoints({
-    endpoints: (builder) => ({
-        createProduct: builder.mutation({
-            query: (productData) => {
-                const formData = new FormData();
-                Object.entries(productData).forEach(([key, value]) => {
-                    if (key === "images" && Array.isArray(value)) {
-                        value.forEach((file) => formData.append("images", file));
-                    } else {
-                        formData.append(key, value);
-                    }
-                });
-                return {
-                    url: "/product/create",
-                    method: "POST",
-                    body: formData,
-                };
-            },
-            invalidatesTags: ["Products"],
-        }),
-        getProducts: builder.query({
-            query: () => "/product/all",
-            providesTags: ["Products"],
-        }),
-        getProductById: builder.query({
-            query: (id) => `/product/get/${id}`,
-            providesTags: ["Products"],
-        }),
-        updateProduct: builder.mutation({
-            query: ({ id, ...productData }) => {
-                const formData = new FormData();
-                Object.entries(productData).forEach(([key, value]) => {
-                    if (key === "images" && Array.isArray(value)) {
-                        value.forEach((file) => formData.append("images", file));
-                    } else {
-                        formData.append(key, value);
-                    }
-                });
-                return {
-                    url: `/product/update/${id}`,
-                    method: "PUT",
-                    body: formData,
-                };
-            },
-            invalidatesTags: ["Products"],
-        }),
-        deleteProduct: builder.mutation({
-            query: (id) => ({
-                url: `/product/delete/${id}`,
-                method: "DELETE",
-            }),
-            invalidatesTags: ["Products"],
-        }),
+  endpoints: (builder) => ({
+    // createProduct: builder.mutation({
+    //     query: (productData) => {
+    //         const formData = new FormData();
+    //         Object.entries(productData).forEach(([key, value]) => {
+    //             if (key === "images" && Array.isArray(value)) {
+    //                 value.forEach((file) => formData.append("images", file));
+    //             } else {
+    //                 formData.append(key, value);
+    //             }
+    //         });
+    //         return {
+    //             url: "/product/create",
+    //             method: "POST",
+    //             body: formData,
+    //         };
+    //     },
+    //     invalidatesTags: ["Products"],
+    // }),
+    createProduct: builder.mutation({
+      query: (formData /* FormData */) => ({
+        url: "/product/create",
+        method: "POST",
+        body: formData,
+      }),
+      invalidatesTags: ["Products"],
     }),
+    getProducts: builder.query({
+      query: () => "/product/all",
+      providesTags: ["Products"],
+    }),
+    getProductById: builder.query({
+      query: (id) => `/product/get/${id}`,
+      providesTags: ["Products"],
+    }),
+    updateProduct: builder.mutation({
+      query: ({ id, ...productData }) => {
+        const formData = new FormData();
+        Object.entries(productData).forEach(([key, value]) => {
+          if (key === "images" && Array.isArray(value)) {
+            value.forEach((file) => formData.append("images", file));
+          } else {
+            formData.append(key, value);
+          }
+        });
+        return {
+          url: `/product/update/${id}`,
+          method: "PUT",
+          body: formData,
+        };
+      },
+      invalidatesTags: ["Products"],
+    }),
+    deleteProduct: builder.mutation({
+      query: (id) => ({
+        url: `/product/delete/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Products"],
+    }),
+  }),
 });
 
 // Export hooks for usage in components
 export const {
-    useGetProductsQuery,
-    useGetProductByIdQuery,
-    useCreateProductMutation,
-    useDeleteProductMutation,
-    useUpdateProductMutation,
+  useGetProductsQuery,
+  useGetProductByIdQuery,
+  useCreateProductMutation,
+  useDeleteProductMutation,
+  useUpdateProductMutation,
 } = productApi;

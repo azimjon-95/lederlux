@@ -1,15 +1,24 @@
-import React, { useEffect } from 'react';
-import { Routes, Route, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
-import Header from './components/header/Header';
-import HomePage from './components/Home';
-import UniversalInfoPage from './components/about/About';
-import Footer from './components/footer/Footer';
-import ManzilMapPage from './components/map/MapPage';
-import ContactForm from './components/sms/Sms';
-import AdminLogin from './components/login/Login';
-import AdminDashboard from './admin/Dashboard';
-import ProductSinglePage from './components/singlePage/ProductSinglePage';
+import React, { useEffect } from "react";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
+import Header from "./components/header/Header";
+import HomePage from "./components/Home";
+import UniversalInfoPage from "./components/about/About";
+import Footer from "./components/footer/Footer";
+import ManzilMapPage from "./components/map/MapPage";
+import ContactForm from "./components/sms/Sms";
+import AdminLogin from "./components/login/Login";
+import AdminDashboard from "./admin/Dashboard";
+import ProductSinglePage from "./components/singlePage/ProductSinglePage";
 // import './style.css';
+import SodiumNitrateInfo from "./components/sodiumNitrateInfo/SodiumNitrateInfo";
+import Products from "./components/products/Products";
 
 // Simulated token validation function (replace with your actual logic)
 const validateToken = (token) => {
@@ -23,7 +32,11 @@ function ProtectedRoute({ element }) {
   const { token } = useParams(); // Get token from URL
   const isAuthenticated = validateToken(token);
 
-  return isAuthenticated ? element : <Navigate to="/ru/admin/servoce" replace />;
+  return isAuthenticated ? (
+    element
+  ) : (
+    <Navigate to="/ru/admin/servoce" replace />
+  );
 }
 
 function RedirectToLang() {
@@ -31,20 +44,21 @@ function RedirectToLang() {
   const location = useLocation();
 
   useEffect(() => {
-    const pathLang = location.pathname.split('/')[1];
-    const validLangs = ['ru', 'en', 'uz'];
-    const storedLang = localStorage.getItem('lang');
+    const pathLang = location.pathname.split("/")[1];
+    const validLangs = ["ru", "en", "uz"];
+    const storedLang = localStorage.getItem("lang");
 
-    if (pathLang === '') {
-      const lang = storedLang && validLangs.includes(storedLang) ? storedLang : 'ru';
-      localStorage.setItem('lang', lang);
+    if (pathLang === "") {
+      const lang =
+        storedLang && validLangs.includes(storedLang) ? storedLang : "ru";
+      localStorage.setItem("lang", lang);
       navigate(`/${lang}`, { replace: true });
-    } else if (pathLang === 'oz') {
-      localStorage.setItem('lang', 'uz');
-      navigate('/uz', { replace: true });
+    } else if (pathLang === "oz") {
+      localStorage.setItem("lang", "uz");
+      navigate("/uz", { replace: true });
     } else if (!validLangs.includes(pathLang)) {
-      localStorage.setItem('lang', 'ru');
-      navigate('/ru', { replace: true });
+      localStorage.setItem("lang", "ru");
+      navigate("/ru", { replace: true });
     }
   }, [location.pathname, navigate]);
 
@@ -54,12 +68,14 @@ function RedirectToLang() {
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
-  const lang = location.pathname.split('/')[1];
-  const token = localStorage.getItem('token');
+  const lang = location.pathname.split("/")[1];
+  const token = localStorage.getItem("token");
 
-  const isSmsPage = location.pathname.includes('/sms');
-  const isAdminLoginPage = location.pathname.includes('/admin/servoce');
-  const isAdminDashboardPage = location.pathname.includes(`/admin/${token}/dashboard`);
+  const isSmsPage = location.pathname.includes("/sms");
+  const isAdminLoginPage = location.pathname.includes("/admin/servoce");
+  const isAdminDashboardPage = location.pathname.includes(
+    `/admin/${token}/dashboard`
+  );
 
   const handleChatClick = () => {
     navigate(`/${lang}/sms`);
@@ -74,12 +90,20 @@ function App() {
         <Route path="/" element={<RedirectToLang />} />
         <Route path="/:lang/:contact" element={<UniversalInfoPage />} />
         <Route path="/:lang/map" element={<ManzilMapPage lang={lang} />} />
+        <Route
+          path="/:lang/nitrat"
+          element={<SodiumNitrateInfo lang={lang} />}
+        />
+        <Route path="/:lang/products" element={<Products lang={lang} />} />
         <Route path="/:lang/sms" element={<ContactForm lang={lang} />} />
         <Route
           path="/admin/:token/dashboard"
           element={<ProtectedRoute element={<AdminDashboard />} />}
         />
-        <Route path="/:lang/admin/servoce" element={<AdminLogin lang={lang} />} />
+        <Route
+          path="/:lang/admin/service"
+          element={<AdminLogin lang={lang} />}
+        />
         <Route path="/:name" element={<ProductSinglePage lang={lang} />} />
         <Route path="/ru" element={<HomePage lang="ru" />} />
         <Route path="/en" element={<HomePage lang="en" />} />

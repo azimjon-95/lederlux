@@ -1,78 +1,86 @@
-import React, { useState, useEffect } from 'react';
-import { Eye, EyeOff, Lock, User, Factory, Shield, ChevronRight } from 'lucide-react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import './login.css';
+import React, { useState, useEffect } from "react";
+import {
+  Eye,
+  EyeOff,
+  Lock,
+  User,
+  Factory,
+  Shield,
+  ChevronRight,
+} from "lucide-react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./login.css";
 
 const translations = {
   uz: {
-    title: 'Administrator Paneli',
-    usernamePlaceholder: 'Foydalanuvchi nomi',
-    passwordPlaceholder: 'Parol',
-    submitButton: 'Kirish',
-    loading: 'Tekshirilmoqda...',
-    securityBadge: 'Xavfsiz ulanish',
-    copyright: '© 2025 LiderLux MCHJ. Barcha huquqlar himoyalangan.',
-    sidePanelTitle: 'Natriy Nitrat',
-    molecularMass: 'Molekular massa',
-    solubility: 'Erishuvchanlik',
-    color: 'Rang',
-    molecularMassValue: '84.99 g/mol',
-    solubilityValue: 'Yuqori',
-    colorValue: 'Rangsiz',
+    title: "Administrator Paneli",
+    usernamePlaceholder: "Foydalanuvchi nomi",
+    passwordPlaceholder: "Parol",
+    submitButton: "Kirish",
+    loading: "Tekshirilmoqda...",
+    securityBadge: "Xavfsiz ulanish",
+    copyright: "© 2025 LiderLux MCHJ. Barcha huquqlar himoyalangan.",
+    sidePanelTitle: "texnik natriy nitrati",
+    molecularMass: "Molekular massa",
+    solubility: "Erishuvchanlik",
+    color: "Rang",
+    molecularMassValue: "84.99 g/mol",
+    solubilityValue: "Yuqori",
+    colorValue: "Rangsiz",
     error: "Kirish amalga oshirilmadi. Iltimos, qayta urinib ko'ring.",
   },
   ru: {
-    title: 'Панель администратора',
-    usernamePlaceholder: 'Имя пользователя',
-    passwordPlaceholder: 'Пароль',
-    submitButton: 'Войти',
-    loading: 'Проверка...',
-    securityBadge: 'Безопасное соединение',
-    copyright: '© 2025 LiderLux MCHJ. Все права защищены.',
-    sidePanelTitle: 'Нитрат натрия',
-    molecularMass: 'Молекулярная масса',
-    solubility: 'Растворимость',
-    color: 'Цвет',
-    molecularMassValue: '84.99 г/моль',
-    solubilityValue: 'Высокая',
-    colorValue: 'Бесцветный',
-    error: 'Вход не удался. Пожалуйста, повторите попытку.',
+    title: "Панель администратора",
+    usernamePlaceholder: "Имя пользователя",
+    passwordPlaceholder: "Пароль",
+    submitButton: "Войти",
+    loading: "Проверка...",
+    securityBadge: "Безопасное соединение",
+    copyright: "© 2025 LiderLux MCHJ. Все права защищены.",
+    sidePanelTitle: "Нитрат натрия",
+    molecularMass: "Молекулярная масса",
+    solubility: "Растворимость",
+    color: "Цвет",
+    molecularMassValue: "84.99 г/моль",
+    solubilityValue: "Высокая",
+    colorValue: "Бесцветный",
+    error: "Вход не удался. Пожалуйста, повторите попытку.",
   },
   en: {
-    title: 'Administrator Panel',
-    usernamePlaceholder: 'Username',
-    passwordPlaceholder: 'Password',
-    submitButton: 'Login',
-    loading: 'Checking...',
-    securityBadge: 'Secure Connection',
-    copyright: '© 2025 LiderLux MCHJ. All rights reserved.',
-    sidePanelTitle: 'Sodium Nitrate',
-    molecularMass: 'Molecular Mass',
-    solubility: 'Solubility',
-    color: 'Color',
-    molecularMassValue: '84.99 g/mol',
-    solubilityValue: 'High',
-    colorValue: 'Colorless',
-    error: 'Login failed. Please try again.',
+    title: "Administrator Panel",
+    usernamePlaceholder: "Username",
+    passwordPlaceholder: "Password",
+    submitButton: "Login",
+    loading: "Checking...",
+    securityBadge: "Secure Connection",
+    copyright: "© 2025 LiderLux MCHJ. All rights reserved.",
+    sidePanelTitle: "Sodium Nitrate",
+    molecularMass: "Molecular Mass",
+    solubility: "Solubility",
+    color: "Color",
+    molecularMassValue: "84.99 g/mol",
+    solubilityValue: "High",
+    colorValue: "Colorless",
+    error: "Login failed. Please try again.",
   },
 };
 
 const AdminLogin = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [loginError, setLoginError] = useState('');
+  const [loginError, setLoginError] = useState("");
   const [selectedLang, setSelectedLang] = useState(
-    localStorage.getItem('lang') || localStorage.getItem('language') || 'ru'
+    localStorage.getItem("lang") || localStorage.getItem("language") || "ru"
   );
 
   useEffect(() => {
-    localStorage.setItem('lang', selectedLang);
+    localStorage.setItem("lang", selectedLang);
   }, [selectedLang]);
 
   const handleInputChange = (e) => {
@@ -81,7 +89,7 @@ const AdminLogin = () => {
       ...prev,
       [name]: value,
     }));
-    if (loginError) setLoginError('');
+    if (loginError) setLoginError("");
   };
 
   const handleLangChange = (lang) => {
@@ -90,22 +98,31 @@ const AdminLogin = () => {
 
   const handleSubmit = async () => {
     setIsLoading(true);
-    setLoginError('');
+    setLoginError("");
     try {
-      const res = await axios.post('https://liderlux-two.vercel.app/api/admin/login', formData);
+      const res = await axios.post(
+        "https://liderlux-two.vercel.app/api/admin/login",
+        formData
+      );
+      // const res = await axios.post(
+      //   "http://localhost:8080/api/admin/login",
+      //   formData
+      // );
       if (res.data?.innerData) {
-        localStorage.setItem('token', res.data.innerData.token);
+        localStorage.setItem("token", res.data.innerData.token);
         navigate(`/admin/${res.data.innerData.token}/dashboard`); // Corrected: Call navigate as a function
       }
     } catch (err) {
       console.log(err);
-      setLoginError(translations[selectedLang].error || 'Login failed. Please try again.');
+      setLoginError(
+        translations[selectedLang].error || "Login failed. Please try again."
+      );
     } finally {
       setIsLoading(false);
     }
   };
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSubmit();
     }
   };
@@ -150,7 +167,7 @@ const AdminLogin = () => {
             <div className="log-input-container">
               <Lock className="log-input-icon" />
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder={t.passwordPlaceholder}
                 value={formData.password}
@@ -178,7 +195,7 @@ const AdminLogin = () => {
 
           <button
             type="button"
-            className={`log-submit-btn ${isLoading ? 'log-loading' : ''}`}
+            className={`log-submit-btn ${isLoading ? "log-loading" : ""}`}
             onClick={handleSubmit}
             disabled={isLoading}
           >
@@ -192,20 +209,20 @@ const AdminLogin = () => {
 
         <div className="log-language-selector">
           <p
-            className={selectedLang === 'uz' ? 'log-lang-active' : ''}
-            onClick={() => handleLangChange('uz')}
+            className={selectedLang === "uz" ? "log-lang-active" : ""}
+            onClick={() => handleLangChange("uz")}
           >
             uz
           </p>
           <p
-            className={selectedLang === 'ru' ? 'log-lang-active' : ''}
-            onClick={() => handleLangChange('ru')}
+            className={selectedLang === "ru" ? "log-lang-active" : ""}
+            onClick={() => handleLangChange("ru")}
           >
             ru
           </p>
           <p
-            className={selectedLang === 'en' ? 'log-lang-active' : ''}
-            onClick={() => handleLangChange('en')}
+            className={selectedLang === "en" ? "log-lang-active" : ""}
+            onClick={() => handleLangChange("en")}
           >
             en
           </p>
@@ -245,5 +262,3 @@ const AdminLogin = () => {
 };
 
 export default AdminLogin;
-
-
