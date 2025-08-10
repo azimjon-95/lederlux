@@ -432,7 +432,7 @@
 
     .manzil-container {
         min-height: 85vh;
-        background: linear-gradient(135deg, #fafafa 0%, #2d2d2d 100%);
+        background: linear-gradient(135deg, #fafafa 0%, #b0b0b04b 100%) !important;
         position: relative;
     }
 
@@ -452,11 +452,11 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem;
-        background: rgba(45, 45, 45, 0.9);
         margin: 1rem;
         border-radius: 15px;
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 215, 0, 0.2);
+        background-color: #e5e5e5e6 !important;
     }
 
     .coordinates-text {
