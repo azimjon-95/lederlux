@@ -38,19 +38,11 @@ export const productApi = api.injectEndpoints({
       providesTags: ["Products"],
     }),
     updateProduct: builder.mutation({
-      query: ({ id, ...productData }) => {
-        const formData = new FormData();
-        Object.entries(productData).forEach(([key, value]) => {
-          if (key === "images" && Array.isArray(value)) {
-            value.forEach((file) => formData.append("images", file));
-          } else {
-            formData.append(key, value);
-          }
-        });
+      query: ({ id, body }) => {
         return {
           url: `/product/update/${id}`,
           method: "PUT",
-          body: formData,
+          body,
         };
       },
       invalidatesTags: ["Products"],

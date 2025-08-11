@@ -35,6 +35,7 @@ function ProductSinglePage() {
       productDetails: "Детали продукта",
       specifications: "Технические характеристики",
       errorMessage: "Продукт не найден", // Added error message
+      added: "Добавлено",
     },
     en: {
       backButton: "Back to Products",
@@ -49,6 +50,7 @@ function ProductSinglePage() {
       productDetails: "Product Details",
       specifications: "Specifications",
       errorMessage: "Product not found", // Added error message
+      added: "Added",
     },
     uz: {
       backButton: "Mahsulotlarga qaytish",
@@ -63,6 +65,7 @@ function ProductSinglePage() {
       productDetails: "Mahsulot tafsilotlari",
       specifications: "Texnik xususiyatlari",
       errorMessage: "Mahsulot topilmadi", // Added error message
+      added: "Qo'shilgan",
     },
   };
 
@@ -292,7 +295,7 @@ function ProductSinglePage() {
                 </div>
                 {product.createdAt && (
                   <div className="bez-meta-item">
-                    <span>{selectedLang.added || "Added"}:</span>
+                    <span>{selectedLang.added || "Qo'shilgan"}:</span>
                     <span>
                       {new Date(product.createdAt).toLocaleDateString()}
                     </span>

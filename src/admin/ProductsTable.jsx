@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Plus, Trash2, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
+import {
+  Plus,
+  Trash2,
+  ChevronLeft,
+  ChevronRight,
+  Loader2,
+  Edit,
+} from "lucide-react";
 import {
   useGetProductsQuery,
   useCreateProductMutation,
@@ -7,6 +14,7 @@ import {
 } from "../context/productionApi";
 import "./css/productList.css";
 import "./css/admin.css";
+import UpdateProduct from "./UpdateProduct";
 
 // Translation object
 const translations = {
@@ -257,6 +265,8 @@ const ProductList = ({
     manufacturerWarranty: { uz: "", ru: "", en: "" },
   });
 
+  const [updateProduct, setUpdateProduct] = useState(false);
+
   // Get translations based on lang prop
   const t = translations[lang] || translations.uz;
 
@@ -393,80 +403,6 @@ const ProductList = ({
     );
     setImageFiles((prevFiles) => [...prevFiles, ...newFiles]);
   };
-
-  //   const saveProduct = async () => {
-  //     if (!validateForm()) return;
-
-  //     try {
-  //       const formDataToSend = new FormData();
-  //       formDataToSend.append("title[uz]", formData.title.uz || "");
-  //       formDataToSend.append("title[ru]", formData.title.ru || "");
-  //       formDataToSend.append("title[en]", formData.title.en || "");
-  //       formDataToSend.append(
-  //         "applicationAreas[uz]",
-  //         formData.applicationAreas.uz || ""
-  //       );
-  //       formDataToSend.append(
-  //         "applicationAreas[ru]",
-  //         formData.applicationAreas.ru || ""
-  //       );
-  //       formDataToSend.append(
-  //         "applicationAreas[en]",
-  //         formData.applicationAreas.en || ""
-  //       );
-  //       formDataToSend.append("usageMethod[uz]", formData.usageMethod.uz || "");
-  //       formDataToSend.append("usageMethod[ru]", formData.usageMethod.ru || "");
-  //       formDataToSend.append("usageMethod[en]", formData.usageMethod.en || "");
-  //       formDataToSend.append(
-  //         "safetyRequirements[uz]",
-  //         formData.safetyRequirements.uz || ""
-  //       );
-  //       formDataToSend.append(
-  //         "safetyRequirements[ru]",
-  //         formData.safetyRequirements.ru || ""
-  //       );
-  //       formDataToSend.append(
-  //         "safetyRequirements[en]",
-  //         formData.safetyRequirements.en || ""
-  //       );
-  //       formDataToSend.append(
-  //         "storageAndTransport[uz]",
-  //         formData.storageAndTransport.uz || ""
-  //       );
-  //       formDataToSend.append(
-  //         "storageAndTransport[ru]",
-  //         formData.storageAndTransport.ru || ""
-  //       );
-  //       formDataToSend.append(
-  //         "storageAndTransport[en]",
-  //         formData.storageAndTransport.en || ""
-  //       );
-  //       formDataToSend.append(
-  //         "manufacturerWarranty[uz]",
-  //         formData.manufacturerWarranty.uz || ""
-  //       );
-  //       formDataToSend.append(
-  //         "manufacturerWarranty[ru]",
-  //         formData.manufacturerWarranty.ru || ""
-  //       );
-  //       formDataToSend.append(
-  //         "manufacturerWarranty[en]",
-  //         formData.manufacturerWarranty.en || ""
-  //       );
-  //       // price - son sifatida
-  //       fd.append("price", formData.price || 0);
-  //       imageFiles.forEach((file) => {
-  //         formDataToSend.append("images", file);
-  //       });
-  //       console.log("fa");
-
-  //       await createProduct(formDataToSend).unwrap();
-  //       refetch();
-  //       closeModal();
-  //     } catch (error) {
-  //       setError(t.errorSaving);
-  //     }
-  //   };
 
   const saveProduct = async () => {
     if (!validateForm()) return;
@@ -663,6 +599,15 @@ const ProductList = ({
                             <Trash2 size={16} />
                           )}
                         </button>
+
+                        <button
+                          className="pred-btn"
+                          onClick={() => {
+                            setUpdateProduct(product);
+                          }}
+                        >
+                          <Edit size={16} />
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -675,6 +620,10 @@ const ProductList = ({
             </tbody>
           </table>
         </div>
+      )}
+
+      {updateProduct && (
+        <UpdateProduct data={updateProduct} setCloseModal={setUpdateProduct} />
       )}
 
       {modalOpen && modalType === "product" && (
