@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import { FiX } from "react-icons/fi";
 
 const ContactForm = () => {
   const navigate = useNavigate();
@@ -53,10 +54,11 @@ const ContactForm = () => {
                 
                 👤 *Ism-familiya:* ${feedback.name}
                 📞 *Telefon:* ${feedback.phone}
-                ${feedback.telegram
-          ? `📱 *Telegram:* @${feedback.telegram}`
-          : ""
-        }
+                ${
+                  feedback.telegram
+                    ? `📱 *Telegram:* @${feedback.telegram}`
+                    : ""
+                }
                 ⭐ *Reyting:* ${feedback.rating}/5
                 
                 📝 *Xabar:*
@@ -146,6 +148,10 @@ const ContactForm = () => {
       )}
 
       <div className="sms-form-wrapper">
+        <button className="sms-close" onClick={() => navigate("/")}>
+          <FiX size={24} />
+        </button>
+
         <div className="sms-header">
           <h1 className="sms-title">Biz bilan bog'laning</h1>
           <p className="sms-subtitle">
@@ -211,8 +217,9 @@ const ContactForm = () => {
                 <button
                   key={star}
                   type="button"
-                  className={`sms-star ${star <= feedback.rating ? "sms-star-active" : ""
-                    }`}
+                  className={`sms-star ${
+                    star <= feedback.rating ? "sms-star-active" : ""
+                  }`}
                   onClick={() => handleRatingChange(star)}
                 >
                   <Star size={24} />
@@ -237,12 +244,15 @@ const ContactForm = () => {
             />
           </div>
           <div className="description_btn">
-            <button onClick={() => navigate(-1)} className="description_button">Orqaga</button>
+            <button onClick={() => navigate(-1)} className="description_button">
+              Orqaga
+            </button>
             <button
               onClick={handleSubmit}
               type="submit"
-              className={`sms-btn sms-btn-primary ${isSubmitting ? "sms-btn-loading" : ""
-                }`}
+              className={`sms-btn sms-btn-primary ${
+                isSubmitting ? "sms-btn-loading" : ""
+              }`}
               disabled={isSubmitting}
             >
               {isSubmitting ? (
