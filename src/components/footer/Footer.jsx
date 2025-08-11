@@ -13,8 +13,8 @@ function Footer({ lang = "ru" }) {
         email: "liderlux.info@gmail.com",
       },
       products: {
-        title: "Продукция",
-        items: ["Минеральные удобрения", "Нитраты"],
+        title: "Каталог товаров",
+        items: ["Продукция", "О натриевом нитрате"],
       },
       about: {
         title: "О компании",
@@ -30,8 +30,8 @@ function Footer({ lang = "ru" }) {
         email: "liderlux.info@gmail.com",
       },
       products: {
-        title: "Products",
-        items: ["Chemical Products", "Nitrates"],
+        title: "Products section",
+        items: ["products", "About Sodium Nitrate"],
       },
       about: {
         title: "About the Company",
@@ -47,8 +47,9 @@ function Footer({ lang = "ru" }) {
         email: "liderlux.info@gmail.com",
       },
       products: {
-        title: "Mahsulotlar",
-        items: ["Mineral o’g’itlar", "Nitratlar"],
+        title: "Mahsulotlar bo'limi",
+        items: ["mahsulotlar", "Natriy Nitrat haqida"],
+        // items: ["Mineral o’g’itlar", "Nitratlar"],
       },
       about: {
         title: "Kompaniya haqida",

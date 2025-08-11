@@ -7,7 +7,7 @@ const baseQuery = fetchBaseQuery({
   prepareHeaders: (headers) => {
     const token = localStorage.getItem("token");
     if (token) {
-      headers.set("Authorization", `Bearer ${token}`); // Diqqat: ko‘p API-larda "Authorization" bo‘ladi, sizda "authentication" bo‘lsa ham, tekshiring
+      headers.set("Authorization", `Bearer ${token}`);
     }
     return headers;
   },

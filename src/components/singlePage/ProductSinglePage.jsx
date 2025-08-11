@@ -210,9 +210,7 @@ function ProductSinglePage() {
                 <span className="bez-price-label">{selectedLang.price}:</span>
                 <span className="bez-price-value">
                   {product.price
-                    ? `${product.price.toLocaleString()} ${
-                        selectedLang.currency
-                      }`
+                    ? `${product.price} ${selectedLang.currency}`
                     : "N/A"}
                 </span>
               </div>

@@ -20,7 +20,7 @@ const ManzilMapPage = () => {
     ru: {
       title: "МЕСТОНАХОЖДЕНИЕ",
       locationText1: "Ферганская область, Ташлакский район",
-      locationText2: "Ашкак МФЙ, улица Бешкиш",
+      locationText2: "Ахшак МФЙ, улица Бешолиш",
       coordinates: "Координаты",
     },
     uz: {

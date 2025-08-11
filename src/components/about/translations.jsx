@@ -104,7 +104,7 @@ export const translations = {
     contact: {
       title: "Свяжитесь с нами",
       subtitle: "Для любых вопросов или заказов",
-      address: "Ферганская область, Ташлакский район, Ашкак МФЙ, улица Бешолиш",
+      address: "Ферганская область, Ташлакский район, МФЙ Ахшак, улица Бешолиш",
       main: "Приёмная",
       sales: "Отдел по продажам",
       export: "Отдел сбыта по вопросам экспорта",
@@ -168,7 +168,7 @@ export const translations = {
     contact: {
       title: "Contact Us",
       subtitle: "For any questions or orders",
-      address: "Fergana Region, Tashlak District, Akshak MFY, Besholish Street",
+      address: "Fergana Region, Tashlak District, Ahshak MFI, Besholish Street",
       main: "Reception",
       sales: "Sales Department",
       export: "Export Sales Department",

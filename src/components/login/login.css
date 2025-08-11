@@ -1,464 +1,483 @@
 /* Login.css - NaNO₃ Zavod Admin Login Styles */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .log-container {
-    min-height: 100vh;
-    background-color: #fafafa;
-    color: white;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    display: flex;
-    position: relative;
-    overflow: hidden;
+  min-height: 100vh;
+  background-color: #fafafa;
+  color: white;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Background Effects */
 .log-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .log-particles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.06) 0%, transparent 50%);
-    animation: log-float 20s ease-in-out infinite;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 215, 0, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 215, 0, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(255, 215, 0, 0.06) 0%,
+      transparent 50%
+    );
+  animation: log-float 20s ease-in-out infinite;
 }
 
 .log-grid {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image:
-        linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    opacity: 0.3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(255, 215, 0, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
 }
 
 @keyframes log-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 
-    0%,
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-20px) rotate(180deg);
-    }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
 }
 
 /* Main Content */
 .log-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    z-index: 10;
-    position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  z-index: 10;
+  position: relative;
 }
 
 /* Header */
 .log-header {
-    text-align: center;
-    margin-bottom: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .log-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    /* margin-bottom: 1.5rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 .log-factory-icon {
-    width: 48px;
-    height: 48px;
-    color: #FFD700;
-    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+  width: 48px;
+  height: 48px;
+  color: #ffd700;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
 }
 
 .log-formula {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #FFD700;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    font-family: 'Times New Roman', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  font-family: "Times New Roman", serif;
 }
 
 .log-title {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #FFD700 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  /* background: linear-gradient(135deg, #ffffff 0%, #FFD700 100%); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* background-clip: text; */
+  color: #ffd700;
 }
 
 .log-subtitle {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 400;
+  font-size: 1.1rem;
+  color: #ffd700;
+  font-weight: 400;
 }
 
 /* Form */
 .log-form {
-    width: 100%;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 2.5rem;
-    border: 1px solid rgba(255, 215, 0, 0.1);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
 }
 
 .log-input-group {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .log-input-container {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .log-input-icon {
-    position: absolute;
-    left: 1rem;
-    width: 20px;
-    height: 20px;
-    color: rgba(255, 215, 0, 0.8);
-    z-index: 2;
+  position: absolute;
+  left: 1rem;
+  width: 20px;
+  height: 20px;
+  color: rgba(255, 215, 0, 0.8);
+  z-index: 2;
 }
 
 .log-input {
-    width: 100%;
-    padding: 1rem 1rem 1rem 3rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 215, 0, 0.2);
-    border-radius: 12px;
-    color: white;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    outline: none;
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 215, 0, 0.2);
+  border-radius: 12px;
+  color: #444;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
 }
 
 .log-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 215, 0, 0.5);
 }
 
 .log-input:focus {
-    border-color: #FFD700;
-    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
-    background: rgba(255, 255, 255, 0.15);
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .log-password-toggle {
-    position: absolute;
-    right: 1rem;
-    background: none;
-    border: none;
-    color: rgba(255, 215, 0, 0.8);
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    z-index: 2;
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 215, 0, 0.8);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 2;
 }
 
 .log-password-toggle:hover {
-    background: rgba(255, 215, 0, 0.1);
-    color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
 }
 
 /* Error Message */
 .log-error {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #ff6b6b;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    background: rgba(255, 107, 107, 0.1);
-    border-radius: 8px;
-    border-left: 3px solid #ff6b6b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid #ff6b6b;
 }
 
 /* Submit Button */
 .log-submit-btn {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    color: #fafafa;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
-    position: relative;
-    overflow: hidden;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+  color: #fafafa;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 .log-submit-btn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
 }
 
 .log-submit-btn:active:not(:disabled) {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .log-submit-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .log-btn-text {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .log-btn-icon {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
 }
 
 .log-submit-btn:hover .log-btn-icon {
-    transform: translateX(4px);
+  transform: translateX(4px);
 }
 
 .log-loading .log-btn-icon {
-    display: none;
+  display: none;
 }
 
 .log-spinner {
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(26, 26, 26, 0.3);
-    border-radius: 50%;
-    border-top-color: #fafafa;
-    animation: spin 1s ease-in-out infinite;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(26, 26, 26, 0.3);
+  border-radius: 50%;
+  border-top-color: #fafafa;
+  animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Footer */
 .log-footer {
-    margin-top: 2rem;
-    text-align: center;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .log-security-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(255, 215, 0, 0.8);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 215, 0, 0.1);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 215, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 215, 0, 0.8);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
 .log-copyright {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.8rem;
+  color: #444;
+  font-size: 0.8rem;
 }
 
 /* Side Panel */
 .log-side-panel {
-    width: 350px;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
-    border-left: 1px solid rgba(255, 215, 0, 0.2);
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    position: relative;
+  width: 350px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.1) 0%,
+    rgba(255, 215, 0, 0.05) 100%
+  );
+  border-left: 1px solid rgba(255, 215, 0, 0.2);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  position: relative;
 }
 
 .log-chemical-formula {
-    text-align: center;
+  text-align: center;
 }
 
 .log-chemical-formula h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    color: #FFD700;
-    font-weight: 500;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #ffd700;
+  font-weight: 500;
 }
 
 .log-formula-large {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #FFD700;
-    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
-    margin-bottom: 2rem;
-    font-family: 'Times New Roman', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  margin-bottom: 2rem;
+  font-family: "Times New Roman", serif;
 }
 
 .log-properties {
-    text-align: left;
-    space-y: 1rem;
+  text-align: left;
+  space-y: 1rem;
 }
 
 .log-property {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    border-left: 3px solid rgba(255, 215, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid rgba(255, 215, 0, 0.5);
 }
 
 .log-property-label {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
+  color: #444;
+  font-size: 0.9rem;
 }
 
 .log-property-value {
-    color: #FFD700;
-    font-weight: 600;
-    font-size: 0.9rem;
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 /* Language Selector */
 .log-language-selector {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
 .log-language-selector p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-weight: 500;
-    user-select: none;
+  font-size: 0.9rem;
+  color: #444;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 500;
+  user-select: none;
 }
 
 .log-language-selector p:hover {
-    background: rgba(255, 215, 0, 0.1);
-    color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
 }
 
 .log-lang-active {
-    background: rgba(255, 215, 0, 0.3) !important;
-    color: #FFD700 !important;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  background: rgba(255, 215, 0, 0.3) !important;
+  color: #ffd700 !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
 }
 
 /* Accessibility */
 .log-language-selector p:focus {
-    outline: 2px solid #FFD700;
-    outline-offset: 2px;
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
 }
 
 /* Responsive Design */
 @media (max-width: 480px) {
-    .log-language-selector {
-        gap: 0.5rem;
-    }
+  .log-language-selector {
+    gap: 0.5rem;
+  }
 
-    .log-language-selector p {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
-    }
+  .log-language-selector p {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .log-container {
-        flex-direction: column;
-    }
+  .log-container {
+    flex-direction: column;
+  }
 
-    .log-side-panel {
-        width: 100%;
-        padding: 1.5rem;
-        border-left: none;
-        border-top: 1px solid rgba(255, 215, 0, 0.2);
-    }
+  .log-side-panel {
+    width: 100%;
+    padding: 1.5rem;
+    border-left: none;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+  }
 
-    .log-content {
-        padding: 1rem;
-    }
+  .log-content {
+    padding: 1rem;
+  }
 
-    .log-form {
-        padding: 2rem 1.5rem;
-    }
+  .log-form {
+    padding: 2rem 1.5rem;
+  }
 
-    .log-title {
-        font-size: 1.8rem;
-    }
+  .log-title {
+    font-size: 1.8rem;
+  }
 
-    .log-formula-large {
-        font-size: 3rem;
-    }
+  .log-formula-large {
+    font-size: 3rem;
+  }
 
-    .log-properties {
-        display: grid;
-        gap: 1rem;
-    }
+  .log-properties {
+    display: grid;
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .log-content {
-        padding: 1rem 0.5rem;
-    }
+  .log-content {
+    padding: 1rem 0.5rem;
+  }
 
-    .log-form {
-        padding: 1.5rem 1rem;
-    }
+  .log-form {
+    padding: 1.5rem 1rem;
+  }
 
-    .log-title {
-        font-size: 1.5rem;
-    }
+  .log-title {
+    font-size: 1.5rem;
+  }
 
-    .log-formula {
-        font-size: 2rem;
-    }
+  .log-formula {
+    font-size: 2rem;
+  }
 
-    .log-formula-large {
-        font-size: 2.5rem;
-    }
+  .log-formula-large {
+    font-size: 2.5rem;
+  }
 }
 
 /* Smooth Animations */
@@ -466,13 +485,13 @@
 .log-input,
 .log-submit-btn,
 .log-property {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Focus Styles for Accessibility */
 .log-input:focus,
 .log-submit-btn:focus,
 .log-password-toggle:focus {
-    outline: 2px solid #FFD700;
-    outline-offset: 2px;
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
 }

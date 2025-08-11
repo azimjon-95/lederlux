@@ -264,7 +264,7 @@ const ProductList = ({
   const validateForm = () => {
     const newErrors = {};
     if (!formData.title.uz.trim()) newErrors.titleUz = t.titleRequired;
-    if (formData.price <= 0) newErrors.price = t.priceRequired;
+    // if (formData.price) newErrors.price = t.priceRequired;
     setFormErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -358,9 +358,9 @@ const ProductList = ({
     if (field === "price") {
       setFormData((prev) => ({
         ...prev,
-        price: Number(value) || 0,
+        price: value || 0,
       }));
-      if (formErrors.price && value > 0) {
+      if (formErrors.price && value) {
         setFormErrors((prev) => ({ ...prev, price: "" }));
       }
     } else {
@@ -490,7 +490,7 @@ const ProductList = ({
       appendML("manufacturerWarranty", formData.manufacturerWarranty);
 
       // Narx: son ko‘rinishida yuboramiz
-      fd.append("price", String(Number(formData.price) || 0));
+      fd.append("price", formData.price || 0);
 
       // Rasmlar
       (imageFiles || []).forEach((file) => fd.append("images", file));
@@ -752,8 +752,7 @@ const ProductList = ({
                   </label>
                   <div className="pred-price-input">
                     <input
-                      type="number"
-                      min="0"
+                      type="string"
                       value={formData.price}
                       onChange={(e) =>
                         handleInputChange("price", null, e.target.value)
@@ -761,9 +760,9 @@ const ProductList = ({
                       placeholder={t.pricePlaceholder}
                       className={formErrors.price ? "pred-input-error" : ""}
                     />
-                    {formErrors.price && (
+                    {/* {formErrors.price && (
                       <span className="pred-error">{formErrors.price}</span>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>

@@ -48,13 +48,13 @@ const UniversalInfoPage = () => {
   const phones = contactData?.innerData[contactData?.innerData.length - 1];
 
   const contactItems = [
-    {
-      key: "main",
-      icon: Phone,
-      // Приёмная
-      label: t.contact?.main || "Приёмная",
-      value: phones?.reception,
-    },
+    // {
+    //   key: "main",
+    //   icon: Phone,
+    //   // Приёмная
+    //   label: t.contact?.main || "Приёмная",
+    //   value: phones?.reception,
+    // },
     {
       key: "sales",
       icon: ShoppingCart,
@@ -76,20 +76,20 @@ const UniversalInfoPage = () => {
       label: t.contact?.procurement || "Отдел по закупу",
       value: phones?.purchaseDepartment,
     },
-    {
-      key: "hr",
-      icon: Users,
-      // Отдел по работе с персоналом
-      label: t.contact?.personnel || "Отдел по работе с персоналом",
-      value: phones?.hrDepartment,
-    },
-    {
-      key: "info",
-      icon: Info,
-      // Справочное бюро
-      label: t.contact?.info || "Справочное бюро",
-      value: phones?.infoDesk,
-    },
+    // {
+    //   key: "hr",
+    //   icon: Users,
+    //   // Отдел по работе с персоналом
+    //   label: t.contact?.personnel || "Отдел по работе с персоналом",
+    //   value: phones?.hrDepartment,
+    // },
+    // {
+    //   key: "info",
+    //   icon: Info,
+    //   // Справочное бюро
+    //   label: t.contact?.info || "Справочное бюро",
+    //   value: phones?.infoDesk,
+    // },
     {
       key: "telegram",
       icon: Send,
