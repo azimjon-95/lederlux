@@ -317,7 +317,7 @@ function UpdateProduct({ data, setCloseModal }) {
       <h3>Narxi</h3>
       <label>
         <input
-          type="number"
+          type="string"
           value={formData.price}
           onChange={(e) => handleChange("price", e.target.value)}
         />

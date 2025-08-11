@@ -16,7 +16,7 @@ function Products({ lang = "ru", title }) {
       // mahsulotlar bo'limi
       sectionTitle: "Каталог товаров",
       detailsButton: "Подробнее",
-      currency: "сум",
+      currency: "$",
       loading: "Загрузка...",
       error: "Ошибка при загрузке продуктов",
     },
@@ -30,7 +30,7 @@ function Products({ lang = "ru", title }) {
     uz: {
       sectionTitle: "Mahsulotlar bo'limi",
       detailsButton: "Batafsil",
-      currency: "so'm",
+      currency: "$",
       loading: "Yuklanmoqda...",
       error: "Mahsulotlarni yuklashda xatolik",
     },
@@ -171,7 +171,8 @@ function Products({ lang = "ru", title }) {
 
                 <div className="bez-product-price-box">
                   <div className="bez-product-price">
-                    {product.price} {selectedLang.currency}
+                    {product.price}
+                     {/* {selectedLang.currency} */}
                   </div>
 
                   <button

@@ -30,7 +30,7 @@ function ProductSinglePage() {
       safetyRequirements: "Требования безопасности",
       manufacturerWarranty: "Гарантия производителя",
       storageAndTransport: "Хранение и транспортировка",
-      currency: "сум",
+      currency: "$",
       imageGallery: "Галерея изображений",
       productDetails: "Детали продукта",
       specifications: "Технические характеристики",
@@ -60,7 +60,7 @@ function ProductSinglePage() {
       safetyRequirements: "Xavfsizlik talablari",
       manufacturerWarranty: "Ishlab chiqaruvchi kafolati",
       storageAndTransport: "Saqlash va tashish",
-      currency: "so'm",
+      currency: "$",
       imageGallery: "Rasm galereyasi",
       productDetails: "Mahsulot tafsilotlari",
       specifications: "Texnik xususiyatlari",
@@ -213,7 +213,9 @@ function ProductSinglePage() {
                 <span className="bez-price-label">{selectedLang.price}:</span>
                 <span className="bez-price-value">
                   {product.price
-                    ? `${product.price} ${selectedLang.currency}`
+                    ? //  ${selectedLang.currency}
+                      `${product.price}
+                     `
                     : "N/A"}
                 </span>
               </div>
