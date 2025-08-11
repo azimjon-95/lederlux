@@ -570,7 +570,7 @@ const ProductList = ({
                       </div>
                     </td>
                     <td>{product.title[lang]}</td>
-                    <td>${product.price}</td>
+                    <td>{product.price}</td>
                     <td>
                       {new Date(product.updatedAt).toLocaleDateString(
                         lang === "ru"
