@@ -7,6 +7,8 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
+import { useDispatch } from "react-redux"; // Add this import
+import { productApi } from "./context/productionApi"; // Adjust the import path if needed
 import Header from "./components/header/Header";
 import HomePage from "./components/Home";
 import UniversalInfoPage from "./components/about/About";
@@ -68,6 +70,7 @@ function RedirectToLang() {
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch(); // Add this to get dispatch
   const lang = location.pathname.split("/")[1];
   const token = localStorage.getItem("token");
 
@@ -76,6 +79,11 @@ function App() {
   const isAdminDashboardPage = location.pathname.includes(
     `/admin/${token}/dashboard`
   );
+
+  // Prefetch products data on app load
+  useEffect(() => {
+    dispatch(productApi.endpoints.getProducts.initiate());
+  }, [dispatch]); // Runs once on mount, caches data via RTK Query
 
   const handleChatClick = () => {
     navigate(`/${lang}/sms`);

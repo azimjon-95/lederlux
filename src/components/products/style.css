@@ -271,14 +271,14 @@
 }
 
 .bez-skeleton-image {
-    background: #f0f0f0;
+    background: #e0e0e0;
     position: relative;
     overflow: hidden;
 }
 
 .bez-skeleton-title {
     height: 60px;
-    background: #f0f0f0;
+    background: #e0e0e0;
     border-radius: 8px;
     margin-bottom: 15px;
     position: relative;
@@ -291,7 +291,7 @@
 
 .bez-skeleton-line {
     height: 16px;
-    background: #f0f0f0;
+    background: #e0e0e0;
     border-radius: 4px;
     margin-bottom: 8px;
     position: relative;
@@ -305,7 +305,7 @@
 .bez-skeleton-price {
     height: 28px;
     width: 120px;
-    background: #f0f0f0;
+    background: #e0e0e0;
     border-radius: 6px;
     position: relative;
     overflow: hidden;
@@ -314,7 +314,7 @@
 .bez-skeleton-button {
     height: 40px;
     width: 100px;
-    background: #f0f0f0;
+    background: #e0e0e0;
     border-radius: 25px;
     position: relative;
     overflow: hidden;
@@ -345,23 +345,7 @@
 }
 
 /* Dark Mode Skeleton Styles */
-@media (prefers-color-scheme: dark) {
 
-    .bez-skeleton-image,
-    .bez-skeleton-title,
-    .bez-skeleton-line,
-    .bez-skeleton-price,
-    .bez-skeleton-button {
-        background: #333 !important;
-    }
-
-    .bez-skeleton-shimmer {
-        background: linear-gradient(90deg,
-                transparent,
-                rgba(255, 255, 255, 0.1),
-                transparent);
-    }
-}
 
 /* Responsive Skeleton Styles */
 @media (max-width: 768px) {

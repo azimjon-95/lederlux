@@ -3,24 +3,6 @@ import { api } from "./api";
 
 export const productApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    // createProduct: builder.mutation({
-    //     query: (productData) => {
-    //         const formData = new FormData();
-    //         Object.entries(productData).forEach(([key, value]) => {
-    //             if (key === "images" && Array.isArray(value)) {
-    //                 value.forEach((file) => formData.append("images", file));
-    //             } else {
-    //                 formData.append(key, value);
-    //             }
-    //         });
-    //         return {
-    //             url: "/product/create",
-    //             method: "POST",
-    //             body: formData,
-    //         };
-    //     },
-    //     invalidatesTags: ["Products"],
-    // }),
     createProduct: builder.mutation({
       query: (formData /* FormData */) => ({
         url: "/product/create",

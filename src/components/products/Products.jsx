@@ -39,7 +39,7 @@ function Products({ lang = "ru", title }) {
   const selectedLang = translations[lang] || translations.ru;
 
   // Loading state with skeleton cards
-  if (isLoading) {
+  if (isLoading || error) {
     return (
       <section className="bez-products-section">
         <div className="bez-container">
@@ -172,7 +172,7 @@ function Products({ lang = "ru", title }) {
                 <div className="bez-product-price-box">
                   <div className="bez-product-price">
                     {product.price}
-                     {/* {selectedLang.currency} */}
+                    {/* {selectedLang.currency} */}
                   </div>
 
                   <button
