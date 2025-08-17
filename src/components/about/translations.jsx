@@ -28,7 +28,7 @@ export const translations = {
       delivery: "Yetkazib berish",
       deliveryDesc:
         "Asosiy maqsadimiz — mahalliy va xalqaro bozorlerde ishonchli, raqobatbardosh kimyoviy mahsulotlar bilan yetakchi bo‘lish.",
-      productTitle: "Asosiy mahsulot: texnik natriy nitrati",
+      productTitle: "Asosiy mahsulot: Natriy Nitrat Texnik",
       productSpecs: [
         "Natriy azotnokislotali texnik (NaNO₃)",
         "Sifat: ≥99%",

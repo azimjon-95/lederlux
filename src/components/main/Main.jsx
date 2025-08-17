@@ -48,7 +48,7 @@ const Main = ({ lang = "ru" }) => {
         sectionTitle: "Kompaniya haqida",
         companyTitle: "«LiderLux» MCHJ",
         description: [
-          "Bu kimyo sanoati sohasida faoliyat yurituvchi, yuqori sifatli kimyoviy xomashyo va mineral o‘g‘itlar ishlab chiqaruvchi zamonaviy korxona. Bizning asosiy yo‘nalishlarimizdan biri — texnik maqsadlar uchun mo‘ljallangan texnik natriy nitrati  ishlab chiqarishdir.",
+          "Bu kimyoviy mahsulotlar ishlab chiqarish va yetkazib berish bo‘yicha yetakchi korxonalardan biri. Biz yuqori sifatli natriy nitrat (NaNO₃) ni ichki va tashqi bozorga yetkazib beramiz.",
         ],
         button: "Batafsil",
       },

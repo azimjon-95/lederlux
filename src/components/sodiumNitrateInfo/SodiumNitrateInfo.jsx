@@ -21,6 +21,8 @@ import "./style.css";
 const translations = {
   uz: {
     header: {
+      titleOne: "NATRIY NITRATI",
+      titleSub: "Natriy nitrat – oq rangli kristall modda bo‘lib, suvda yaxshi eriydi. U asosan qishloq xo‘jaligida mineral o‘g‘it sifatida, sanoatda shisha, keramika, portlovchi moddalar va kimyoviy reaktivlar tayyorlashda qo‘llaniladi.",
       title: "TEXNIK NATRIY NITRATI",
       subtitle: "",
       chemicalFormula: "NaNO₃",
@@ -165,6 +167,8 @@ const translations = {
   },
   ru: {
     header: {
+      titleOne: "НАТРИЙ НИТРАТ",
+      titleSub: "Натрий нитрат – белое кристаллическое вещество, хорошо растворимое в воде. Используется в основном в сельском хозяйстве как минеральное удобрение, а также в промышленности для производства стекла, керамики, взрывчатых веществ и химических реактивов.",
       title: "НАТРИЙ АЗОТНОКИСЛЫЙ ТЕХНИЧЕСКИЙ",
       subtitle: "",
       chemicalFormula: "NaNO₃",
@@ -309,6 +313,8 @@ const translations = {
   },
   en: {
     header: {
+      titleOne: "SODIUM NITRATE",
+      titleSub: "Sodium nitrate is a white crystalline substance, highly soluble in water. It is primarily used in agriculture as a mineral fertilizer and in industry for the production of glass, ceramics, explosives, and chemical reagents.",
       title: "TECHNICAL SODIUM NITRATE",
       subtitle: "",
       chemicalFormula: "NaNO₃",
@@ -475,7 +481,11 @@ const SodiumNitrateInfo = ({ lang = "uz" }) => {
             <Beaker className="formula-icon" />
             <span>{t.header.chemicalFormula}</span>
           </div>
-          <h1>{t.header.title}</h1>
+          <h1>{t.header.titleOne}</h1>
+          <h3>({t.header.title})</h3>
+          <p>{t.header.titleSub}</p>
+
+
           <p className="subtitle">{t.header.subtitle}</p>
           <div className="header-badges">
             <span className="badge warning">
@@ -502,9 +512,8 @@ const SodiumNitrateInfo = ({ lang = "uz" }) => {
             return (
               <button
                 key={section.id}
-                className={`nav-item ${
-                  activeSection === section.id ? "active" : ""
-                }`}
+                className={`nav-item ${activeSection === section.id ? "active" : ""
+                  }`}
                 onClick={() => setActiveSection(section.id)}
               >
                 {Icon && <Icon size={20} />}
@@ -654,9 +663,8 @@ const SodiumNitrateInfo = ({ lang = "uz" }) => {
                   </button>
                 </div>
                 <div
-                  className={`card-content ${
-                    expandedCards.gradeA ? "expanded" : ""
-                  }`}
+                  className={`card-content ${expandedCards.gradeA ? "expanded" : ""
+                    }`}
                 >
                   <p>
                     <strong>{t.application.gradeA.text}</strong>
@@ -685,9 +693,8 @@ const SodiumNitrateInfo = ({ lang = "uz" }) => {
                   </button>
                 </div>
                 <div
-                  className={`card-content ${
-                    expandedCards.gradeB ? "expanded" : ""
-                  }`}
+                  className={`card-content ${expandedCards.gradeB ? "expanded" : ""
+                    }`}
                 >
                   <p>
                     <strong>{t.application.gradeB.text}</strong>
