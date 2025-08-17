@@ -11,8 +11,19 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        {/* <App /> */}
         {/* <SalaryManagement/> */}
+        <div>
+          <h1
+            style={{
+              textAlign: "center",
+              color: "dodgerblue",
+              fontSize: "4vw",
+            }}
+          >
+            Hurmatli mijoz, to'lovni amalga oshiring!{" "}
+          </h1>
+        </div>
       </BrowserRouter>
     </Provider>
   </StrictMode>
