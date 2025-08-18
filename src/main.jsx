@@ -11,8 +11,8 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        {/* <App /> */}
-        <div>
+        <App />
+        {/* <div>
           <h1
             style={{
               textAlign: "center",
@@ -22,7 +22,7 @@ createRoot(document.getElementById("root")).render(
           >
             Hurmatli mijoz, to'lovni amalga oshiring!{" "}
           </h1>
-        </div>
+        </div> */}
       </BrowserRouter>
     </Provider>
   </StrictMode>
