@@ -77,7 +77,7 @@ const UniversalInfoPage = () => {
       value: phones?.purchaseDepartment,
     },
     {
-      key: "hr",
+      key: "turkey",
       icon: Phone,
       label: t.contact?.personnel || "Филиал в Турции",
       value: phones?.turkeyBranch || "",
@@ -227,7 +227,7 @@ const UniversalInfoPage = () => {
                         />
                         <h3>{item.label}</h3>
 
-                        {isLink ? (
+                        {isLink || item.key === "turkey" ? (
                           <a
                             href={item.value}
                             target="_blank"
