@@ -40,7 +40,7 @@ const UniversalInfoPage = () => {
     personnel: "+998 (73) 242-59-95",
     infoPhone: "+998 99 997 44 40",
     instagram: "https://www.instagram.com/liderlux.uz", // Example Instagram link
-    telegram: "https://t.me/liderlux_uz", // Example Telegram link
+    telegram: "https://t.me/liderluxuz", // Example Telegram link
   };
   // Fallback translations to avoid undefined errors
   const t = translations[language] || translations["uz"];
