@@ -19,7 +19,7 @@ const translations = {
     salesDepartment: "Sales Department",
     exportDepartment: "Export Department",
     purchaseDepartment: "Purchase Department",
-    hrDepartment: "HR Department",
+    turkeyBranch: "Branch office in Turkey",
     infoDesk: "Info Desk",
     reception: "Reception",
     actions: "Actions",
@@ -34,7 +34,7 @@ const translations = {
     salesDepartmentRequired: "Sales Department is required",
     exportDepartmentRequired: "Export Department is required",
     purchaseDepartmentRequired: "Purchase Department is required",
-    hrDepartmentRequired: "HR Department is required",
+    hrDepartmentRequired: "Branch office in Turkey is required",
     infoDeskRequired: "Info Desk is required",
     receptionRequired: "Reception is required",
     telegramLink: "Telegram Link",
@@ -52,7 +52,7 @@ const translations = {
     salesDepartment: "Отдел продаж",
     exportDepartment: "Отдел экспорта",
     purchaseDepartment: "Отдел закупок",
-    hrDepartment: "Отдел кадров",
+    turkeyBranch: "Филиал в Турции",
     infoDesk: "Информационное бюро",
     reception: "Ресепшн",
     actions: "Действия",
@@ -67,7 +67,7 @@ const translations = {
     salesDepartmentRequired: "Отдел продаж обязателен",
     exportDepartmentRequired: "Отдел экспорта обязателен",
     purchaseDepartmentRequired: "Отдел закупок обязателен",
-    hrDepartmentRequired: "Отдел кадров обязателен",
+    hrDepartmentRequired: "Филиал в Турции обязателен",
     infoDeskRequired: "Информационное бюро обязательно",
     receptionRequired: "Ресепшн обязателен",
     telegramLink: "Ссылка на Telegram",
@@ -85,7 +85,7 @@ const translations = {
     salesDepartment: "Sotuv Bo'limi",
     exportDepartment: "Eksport Bo'limi",
     purchaseDepartment: "Sotib Olish Bo'limi",
-    hrDepartment: "HR Bo'limi",
+    turkeyBranch: "Turkiya Filiali",
     infoDesk: "Ma'lumot Byurosi",
     reception: "Qabulxona",
     actions: "Amallar",
@@ -100,7 +100,7 @@ const translations = {
     salesDepartmentRequired: "Sotuv Bo'limi majburiy",
     exportDepartmentRequired: "Eksport Bo'limi majburiy",
     purchaseDepartmentRequired: "Sotib Olish Bo'limi majburiy",
-    hrDepartmentRequired: "HR Bo'limi majburiy",
+    hrDepartmentRequired: "Turkiya Filiali majburiy",
     infoDeskRequired: "Ma'lumot Byurosi majburiy",
     receptionRequired: "Qabulxona majburiy",
     telegramLink: "Telegram Havolasi",
@@ -118,7 +118,7 @@ const ContactsTable = ({ lang, searchTerm = "" }) => {
     salesDepartment: "",
     exportDepartment: "",
     purchaseDepartment: "",
-    // hrDepartment: "",
+    turkeyBranch: "",
     // infoDesk: "",s
     // reception: "",
     telegramLink: "",
@@ -149,8 +149,8 @@ const ContactsTable = ({ lang, searchTerm = "" }) => {
       newErrors.exportDepartment = t.exportDepartmentRequired;
     if (!formData.purchaseDepartment.trim())
       newErrors.purchaseDepartment = t.purchaseDepartmentRequired;
-    // if (!formData.hrDepartment.trim())
-    //   newErrors.hrDepartment = t.hrDepartmentRequired;
+    if (!formData.turkeyBranch.trim())
+      newErrors.turkeyBranch = t.hrDepartmentRequired;
     // if (!formData.infoDesk.trim()) newErrors.infoDesk = t.infoDeskRequired;
     // if (!formData.reception.trim()) newErrors.reception = t.receptionRequired;
 
@@ -168,7 +168,7 @@ const ContactsTable = ({ lang, searchTerm = "" }) => {
         salesDepartment: "",
         exportDepartment: "",
         purchaseDepartment: "",
-        // hrDepartment: "",
+        turkeyBranch: "",
         // infoDesk: "",
         // reception: "",
         telegramLink: "",
@@ -186,7 +186,7 @@ const ContactsTable = ({ lang, searchTerm = "" }) => {
       salesDepartment: "",
       exportDepartment: "",
       purchaseDepartment: "",
-      //   hrDepartment: "",
+      turkeyBranch: "",
       //   infoDesk: "",
       //   reception: "",
       telegramLink: "",
@@ -252,7 +252,7 @@ const ContactsTable = ({ lang, searchTerm = "" }) => {
         contact.purchaseDepartment
           .toLowerCase()
           .includes(searchTerm.toLowerCase()) ||
-        // contact.hrDepartment.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        contact.turkeyBranch.toLowerCase().includes(searchTerm.toLowerCase()) ||
         // contact.infoDesk.toLowerCase().includes(searchTerm.toLowerCase()) ||
         // contact.reception.toLowerCase().includes(searchTerm.toLowerCase()) ||
         contact.telegramLink.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -300,7 +300,7 @@ const ContactsTable = ({ lang, searchTerm = "" }) => {
                 <th>{t.salesDepartment}</th>
                 <th>{t.exportDepartment}</th>
                 <th>{t.purchaseDepartment}</th>
-                {/* <th>{t.hrDepartment}</th> */}
+                <th>{t.turkeyBranch}</th>
                 {/* <th>{t.infoDesk}</th> */}
                 {/* <th>{t.reception}</th> */}
                 <th>{t.actions}</th>
@@ -319,7 +319,7 @@ const ContactsTable = ({ lang, searchTerm = "" }) => {
                     <td>{contact.salesDepartment}</td>
                     <td>{contact.exportDepartment}</td>
                     <td>{contact.purchaseDepartment}</td>
-                    {/* <td>{contact.hrDepartment}</td> */}
+                    <td>{contact.turkeyBranch}</td>
                     {/* <td>{contact.infoDesk}</td> */}
                     {/* <td>{contact.reception}</td> */}
                     <td>
@@ -423,18 +423,22 @@ const ContactsTable = ({ lang, searchTerm = "" }) => {
                   )}
                 </div>
 
-                {/* <div className="vfo-form-group">
-                                    <label>{t.hrDepartment} *</label>
-                                    <input
-                                        type="text"
-                                        name="hrDepartment"
-                                        value={formData.hrDepartment}
-                                        onChange={handleInputChange}
-                                        className={`vfo-input ${errors.hrDepartment ? 'vfo-input-error' : ''}`}
-                                        placeholder={t.hrDepartment}
-                                    />
-                                    {errors.hrDepartment && <span className="vfo-error">{errors.hrDepartment}</span>}
-                                </div> */}
+                <div className="vfo-form-group">
+                  <label>{t.turkeyBranch} *</label>
+                  <input
+                    type="text"
+                    name="turkeyBranch"
+                    value={formData.turkeyBranch}
+                    onChange={handleInputChange}
+                    className={`vfo-input ${
+                      errors.turkeyBranch ? "vfo-input-error" : ""
+                    }`}
+                    placeholder={t.turkeyBranch}
+                  />
+                  {errors.turkeyBranch && (
+                    <span className="vfo-error">{errors.turkeyBranch}</span>
+                  )}
+                </div>
 
                 {/* <div className="vfo-form-group">
                                     <label>{t.infoDesk} *</label>

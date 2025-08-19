@@ -76,13 +76,12 @@ const UniversalInfoPage = () => {
       label: t.contact?.procurement || "Отдел по закупу",
       value: phones?.purchaseDepartment,
     },
-    // {
-    //   key: "hr",
-    //   icon: Users,
-    //   // Отдел по работе с персоналом
-    //   label: t.contact?.personnel || "Отдел по работе с персоналом",
-    //   value: phones?.hrDepartment,
-    // },
+    {
+      key: "hr",
+      icon: Phone,
+      label: t.contact?.personnel || "Филиал в Турции",
+      value: phones?.turkeyBranch || "",
+    },
     // {
     //   key: "info",
     //   icon: Info,

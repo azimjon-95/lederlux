@@ -102,6 +102,7 @@ const AdminLogin = () => {
     try {
       const res = await axios.post(
         "https://liderlux-two.vercel.app/api/admin/login",
+        // "http://localhost:8080/api/admin/login",
         formData
       );
       // const res = await axios.post(
