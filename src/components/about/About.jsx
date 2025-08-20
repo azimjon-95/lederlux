@@ -79,7 +79,7 @@ const UniversalInfoPage = () => {
     {
       key: "turkey",
       icon: Phone,
-      label: t.contact?.personnel || "Филиал в Турции",
+      label: t.contact?.personnel || "Офис в Турции, Стамбул",
       value: phones?.turkeyBranch || "",
     },
     // {

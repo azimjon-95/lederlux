@@ -45,7 +45,7 @@ export const translations = {
       sales: "Sotuv bo'limi", // Отдел по продажам
       export: "Eksport bo‘yicha sotuv bo‘limi", // Отдел сбыта по вопросам экспорта
       procurement: "Xaridlar bo‘limi", // Отдел по закупу
-      personnel: "Turkiya Filiali", // Отдел по работе с персоналом
+      personnel: "Turkiya Istanbul ofisi", // Отдел по работе с персоналом
       info: "Ma’lumotnoma byurosi", // Справочное бюро
       telegram: "Telegram",
       whatsapp: "WhatsApp",
@@ -109,7 +109,7 @@ export const translations = {
       sales: "Отдел по продажам",
       export: "Отдел сбыта по вопросам экспорта",
       procurement: "Отдел по закупу",
-      personnel: "Филиал в Турции",
+      personnel: "Офис в Турции, Стамбул",
       info: "Справочное бюро",
       telegram: "Телеграм",
       whatsapp: "WhatsApp",
@@ -173,7 +173,7 @@ export const translations = {
       sales: "Sales Department",
       export: "Export Sales Department",
       procurement: "Procurement Department",
-      personnel: "Branch office in Turkey",
+      personnel: "Office in Turkey, Istanbul",
       info: "Information Desk",
       telegram: "Telegram",
       whatsapp: "WhatsApp",
