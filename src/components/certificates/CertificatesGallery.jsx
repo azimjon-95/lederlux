@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import Гувохнома from "../../assets/cert/guvohnoma_page-0001.jpg";
-import Паспорт from "../../assets/cert/Паспорт.jpg";
+import Паспорт from "../../assets/cert/passportv2.jpg";
 import Сертификат from "../../assets/cert/Сертификат.jpg";
 import "./style.css";
 
@@ -151,8 +151,9 @@ const CertificatesGallery = ({ lang }) => {
         {t.certificates.map((certificate, index) => (
           <div
             key={certificate.id}
-            className={`set-certificate-card ${isLoaded ? "set-animate-in" : ""
-              }`}
+            className={`set-certificate-card ${
+              isLoaded ? "set-animate-in" : ""
+            }`}
             style={{ animationDelay: `${index * 0.2}s` }}
             onClick={() => openCertificate(certificate)}
           >
@@ -195,8 +196,9 @@ const CertificatesGallery = ({ lang }) => {
                 <img
                   src={selectedCertificate.image}
                   alt={selectedCertificate.title}
-                  className={`set-modal-certificate-image ${isZoomed ? "zoomed" : ""
-                    }`}
+                  className={`set-modal-certificate-image ${
+                    isZoomed ? "zoomed" : ""
+                  }`}
                   onClick={toggleZoom}
                   style={{ cursor: isZoomed ? "zoom-out" : "zoom-in" }}
                 />
