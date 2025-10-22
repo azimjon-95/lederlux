@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const mainURL = axios.create({
-  baseURL: "https://liderlux-two.vercel.app/api",
-  // baseURL: "http://localhost:8080/api",
+  // baseURL: "https://liderlux-two.vercel.app/api",
+  baseURL: "https://liderlux.teknik.uz/api",
 });
 
 export default mainURL;
