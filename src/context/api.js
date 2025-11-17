@@ -3,6 +3,7 @@ import { createApi, fetchBaseQuery, retry } from "@reduxjs/toolkit/query/react";
 // Bazaviy query — token bilan avtomatik headerga qo‘shiladi
 const baseQuery = fetchBaseQuery({
   // baseUrl: "https://liderlux-two.vercel.app/api", // API bazaviy manzili
+  // baseUrl: "http://localhost:5050/api", // API bazaviy manzili
   baseUrl: "https://liderlux.teknik.uz/api", // API bazaviy manzili
   prepareHeaders: (headers) => {
     const token = localStorage.getItem("token");
